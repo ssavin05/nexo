@@ -1,0 +1,139 @@
+:root{
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-soft:cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes nexo-fade-up{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes nexo-fade-in{
+  from{opacity:0}to{opacity:1}
+}
+@keyframes nexo-scale-in{
+  from{opacity:0;transform:scale(.97)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes nexo-slide-left{
+  from{opacity:0;transform:translateX(28px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes nexo-slide-right{
+  from{opacity:0;transform:translateX(-28px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes nexo-toast-in{
+  from{opacity:0;transform:translateY(14px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes nexo-pulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+}
+@keyframes nexo-sheen{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+body{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.btn,.icon-btn,.nav-item,.search,.kpi,.card,.auth-card,.feature-grid article,.mock-kpis>div,.mock-row,.table tbody tr,.drawer article,.approval,.kanban article,.role-card,.settings-card,.company-switch,.appbar,.sidebar,.auth-card input,.form input,.modal-form input,.modal-form select,.settings-card input{
+  transition:transform .22s var(--ease-soft),box-shadow .22s var(--ease-soft),background-color .22s var(--ease-soft),border-color .22s var(--ease-soft),opacity .22s var(--ease-soft),filter .22s var(--ease-soft);
+}
+
+.btn:hover,.icon-btn:hover,.search:hover{
+  transform:translateY(-1px);
+}
+.btn:active,.icon-btn:active,.nav-item:active{
+  transform:translateY(1px) scale(.99);
+}
+.btn.primary{
+  position:relative;
+  overflow:hidden;
+}
+.btn.primary::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.06) 35%,rgba(255,255,255,.26) 50%,rgba(255,255,255,.06) 65%,transparent 100%);
+  background-size:200% 100%;
+  opacity:.9;
+  animation:nexo-sheen 4.5s linear infinite;
+  pointer-events:none;
+}
+
+.nav-item:hover{
+  transform:translateX(4px);
+}
+.nav-item.active{
+  box-shadow:inset 0 0 0 1px rgba(127,166,255,.14), 0 10px 18px rgba(6,16,31,.16);
+}
+.brandmark{
+  animation:nexo-scale-in .7s var(--ease-out);
+}
+.company-switch:hover,.kpi:hover,.card:hover,.feature-grid article:hover,.role-card:hover,.settings-card:hover,.approval:hover,.kanban article:hover,.auth-card:hover{
+  box-shadow:0 18px 36px rgba(18,37,66,.10);
+  transform:translateY(-3px);
+}
+.kpi:hover strong,.card:hover .card-head h3{filter:saturate(1.04)}
+
+.hero-copy,.hero-product,.section-head,.feature-grid article,.auth-card{
+  animation:nexo-fade-up .42s var(--ease-out) both;
+}
+.hero-product{animation-delay:.06s}
+.feature-grid article:nth-child(1){animation-delay:.02s}
+.feature-grid article:nth-child(2){animation-delay:.05s}
+.feature-grid article:nth-child(3){animation-delay:.08s}
+
+/* Las vistas internas NO parten de opacity:0. Evita el flash blanco al navegar. */
+.page,.page-head,.kpi-grid,.dashboard-grid,.cards-grid,.inventory-cards,.finance-grid,.finance-kpis,.kanban,.report-grid,.settings-grid,.role-grid,.timeline,.table-card,.empty-state,.summary-strip,.detail-kpis,.detail-body,.tabs{
+  opacity:1 !important;
+  animation:none !important;
+}
+
+.sidebar,.appbar{animation:none}
+.mobile-backdrop,.drawer-back,.modal-back,.command-back{
+  animation:nexo-fade-in .22s ease-out;
+  backdrop-filter:blur(2px);
+}
+.drawer{animation:nexo-slide-left .28s var(--ease-out)}
+.command,.modal{animation:nexo-scale-in .22s var(--ease-out)}
+.toast{animation:nexo-toast-in .26s var(--ease-out)}
+.icon-btn.dot::after{
+  animation:nexo-pulse 1.8s ease-in-out infinite;
+}
+
+.progress i,.line-chart svg path,.line-chart svg polyline,.line-chart svg circle{
+  transition:all .35s var(--ease-soft);
+}
+.table tbody tr:hover{
+  background:#f8fbff;
+  transform:translateX(2px);
+}
+.form input:focus,.modal-form input:focus,.modal-form select:focus,.settings-card input:focus{
+  transform:translateY(-1px);
+}
+
+.prototype-flag{
+  animation:nexo-fade-in .35s ease-out;
+}
+
+@media (max-width:800px){
+  .btn.primary::after{animation-duration:6s}
+  .card:hover,.kpi:hover,.feature-grid article:hover,.role-card:hover,.settings-card:hover,.approval:hover,.kanban article:hover,.auth-card:hover{
+    transform:none;
+    box-shadow:0 10px 24px rgba(18,37,66,.08);
+  }
+  .nav-item:hover{transform:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}

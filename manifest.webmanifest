@@ -1,0 +1,21 @@
+{
+  "name": "Nexo Prototipo",
+  "short_name": "Nexo",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0b1220",
+  "description": "Todo tu negocio, conectado.",
+  "icons": [
+    {
+      "src": "assets/icons/nexo-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/icons/nexo-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
