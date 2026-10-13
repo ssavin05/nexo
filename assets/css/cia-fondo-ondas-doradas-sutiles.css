@@ -1,0 +1,25 @@
+/* CIA — fondo oscuro con ondas doradas fluidas, sutiles y lentas. */
+:root{--cia-blue:#2f6df6;--cia-blue-deep:#1f57d6;--cia-gold:#c8a85c;}
+/* Solo el espacio de gestión: la bienvenida luminosa permanece intacta. */
+.shell{isolation:isolate;background:#050b16!important;position:relative;overflow:clip;}
+.shell::before,.shell::after{content:"";position:fixed;pointer-events:none;z-index:-1;inset:-18%;opacity:.32;filter:blur(22px);background-repeat:no-repeat;will-change:transform;}
+.shell::before{background-image:
+ radial-gradient(ellipse 45% 10% at 22% 23%,transparent 45%,rgba(194,151,59,.24) 47%,rgba(229,194,110,.13) 49%,transparent 54%),
+ radial-gradient(ellipse 38% 9% at 75% 70%,transparent 43%,rgba(194,151,59,.20) 46%,rgba(229,194,110,.10) 49%,transparent 55%),
+ radial-gradient(ellipse 30% 8% at 54% 43%,transparent 43%,rgba(47,109,246,.12) 47%,transparent 55%);
+ animation:ciaGoldCurrentA 42s ease-in-out infinite alternate;}
+.shell::after{opacity:.20;filter:blur(30px);background-image:
+ radial-gradient(ellipse 35% 8% at 85% 20%,transparent 42%,rgba(209,174,94,.28) 46%,rgba(209,174,94,.08) 50%,transparent 56%),
+ radial-gradient(ellipse 42% 8% at 12% 78%,transparent 43%,rgba(209,174,94,.20) 47%,transparent 55%);
+ animation:ciaGoldCurrentB 56s ease-in-out infinite alternate;}
+.shell .main{position:relative;isolation:isolate;background:transparent!important;min-width:0;}
+.shell .main::before{content:"";position:absolute;inset:70px 0 0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,rgba(3,10,23,.22),rgba(5,14,29,.04) 48%,rgba(3,10,23,.28));}
+.shell .sidebar{background:rgba(4,13,30,.96)!important;border-right:1px solid rgba(200,168,92,.18)!important;backdrop-filter:blur(18px);}
+.shell .appbar{background:rgba(5,13,27,.82)!important;border-bottom-color:rgba(200,168,92,.14)!important;color:#edf3ff!important;backdrop-filter:blur(16px);}
+.shell .card,.shell .kpi,.shell .chart-card,.shell .attention,.shell .ai-panel,.shell .dashboard-grid>.card{background:rgba(9,22,42,.78)!important;border-color:rgba(139,164,204,.18)!important;box-shadow:0 12px 32px rgba(0,0,0,.13)!important;backdrop-filter:blur(12px);}
+.shell .btn.primary,.shell button.primary{background:linear-gradient(135deg,#3478ff,#1f57d6)!important;border:1px solid rgba(200,168,92,.48)!important;color:#fff!important;}
+.shell .nav-item.active{background:linear-gradient(100deg,rgba(47,109,246,.36),rgba(31,87,214,.16))!important;border-left:3px solid #2f6df6!important;}
+.shell .nav-item i{color:#c8a85c!important;}
+@keyframes ciaGoldCurrentA{0%{transform:translate3d(-1.5%, -1%,0) rotate(-1deg) scale(1)}50%{transform:translate3d(1.5%,1%,0) rotate(1deg) scale(1.04)}100%{transform:translate3d(-.5%,2%,0) rotate(-.5deg) scale(1.02)}}
+@keyframes ciaGoldCurrentB{0%{transform:translate3d(1%,2%,0) rotate(1deg) scale(1.02)}100%{transform:translate3d(-2%,-1%,0) rotate(-1deg) scale(1.06)}}
+@media(prefers-reduced-motion:reduce){.shell::before,.shell::after{animation:none!important}}

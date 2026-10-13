@@ -1,0 +1,67 @@
+
+/* Ajuste correctivo final: neutraliza reglas antiguas de temas previos */
+:root {
+  --bg:#f4f7fc !important;
+  --surface:#fff !important;
+  --surface2:#f8faff !important;
+  --text:#10264b !important;
+  --muted:#62799e !important;
+  --line:#e4ebf7 !important;
+}
+html, body, #app, .shell, .shell .main {
+  background-color:#f3f7ff !important;
+  color:#10264b !important;
+}
+.shell { grid-template-columns: minmax(270px,19.8%) minmax(0,1fr) !important; overflow:visible !important; }
+.shell .sidebar {
+  background:linear-gradient(160deg,#07152f,#081831) !important;
+  color:#eaf1ff !important;
+}
+.shell .main { background:transparent !important; }
+.shell .search {
+  background:rgba(255,255,255,.88) !important;
+  color:#214675 !important;
+  border:1px solid #e5ecf7 !important;
+  box-shadow:0 2px 8px rgba(35,68,116,.06) !important;
+}
+.shell .search input, .shell .search span, .shell .search kbd { color:#214675 !important; }
+.shell .search kbd { background:#f4f7fc !important; }
+.shell .kpi, .shell .card, .shell .chart-card, .shell .attention,
+.shell .dashboard-grid > .card, .shell .ai-panel, .shell .periods {
+  background:rgba(255,255,255,.92) !important;
+  color:#10264b !important;
+  border:1px solid #e3ebf8 !important;
+  border-radius:14px !important;
+  clip-path:none !important;
+  box-shadow:0 5px 16px rgba(26,62,118,.07) !important;
+}
+.shell .kpi { min-width:0 !important; padding:17px 18px !important; }
+.shell .kpi strong { color:#10356f !important; font-size:26px !important; line-height:1.25 !important; }
+.shell .kpi small { color:#526b91 !important; font-size:13px !important; }
+.shell .kpi span { color:#637da4 !important; font-size:12px !important; }
+.shell .page { padding:24px 28px 34px !important; max-width:none !important; }
+.shell .page-head h1 { font-size:32px !important; line-height:1.2 !important; color:#10264b !important; }
+.shell .page-head p { font-size:16px !important; color:#62799e !important; }
+.shell .appbar {
+  background:rgba(255,255,255,.45) !important;
+  color:#18335d !important;
+  border-bottom:0 !important;
+}
+.shell .appbar select { background:#fff !important; color:#19365f !important; }
+.shell .nav-item.active { background:linear-gradient(100deg,#1558a9,#124786) !important; }
+.shell .sidebar .company-switch { background:#142747 !important; }
+.shell .dashboard-grid { gap:18px !important; }
+.shell .kpi-grid { grid-template-columns:repeat(6,minmax(0,1fr)) !important; gap:12px !important; }
+.shell .line-chart { height:210px !important; }
+@media(max-width:1250px) {
+  .shell { grid-template-columns:230px minmax(0,1fr) !important; }
+  .shell .kpi-grid { grid-template-columns:repeat(3,minmax(0,1fr)) !important; }
+  .shell .page { padding:22px 18px 30px !important; }
+}
+@media(max-width:760px) {
+  .shell { grid-template-columns:1fr !important; }
+  .shell .kpi-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .shell .dashboard-grid, .shell .dashboard-grid.thirds { grid-template-columns:1fr !important; }
+  .shell .page { padding:18px 12px !important; }
+  .shell .page-head h1 { font-size:26px !important; }
+}

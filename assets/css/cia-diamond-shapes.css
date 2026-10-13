@@ -1,0 +1,23 @@
+/* Identidad geométrica CIA: rombos en elementos visuales, sin sacrificar legibilidad. */
+:root{--cia-red:#a66bff;--cia-red-dark:#6e35b5;--cia-gold:#d8ad54;--cia-diamond-cut:12px}
+/* Iconos y bloques cuadrados pasan a rombos reales. */
+.brandmark,.nx-v33-mark,.nx-orbit-core,.nx-setup-orbit .nx-orbit-core,
+.kpi-icon,.card-icon,.module-icon,.feature-icon,.doc-icon,.notif-icon,
+.attention-icon,.entity-avatar,.avatar,.nx-ai-head>span,.security-note>div>span,
+.session-row>span:first-child,.nx-business-grid button i,
+.nx-setup-orbit span:not(.nx-orbit-core){border-radius:0!important;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+/* Opciones y botones conservan su área clicable; el acento rombo identifica cada elemento. */
+.nx-answer-grid button,.nx-business-grid button,.nx-product-grid button,
+.module-card,.role-card,.settings-card,.feature-grid article{position:relative}
+.nx-answer-grid button:before,.nx-business-grid button:before,.nx-product-grid button:before,
+.module-card:before,.role-card:before,.settings-card:before,.feature-grid article:before{
+ content:"";position:absolute;top:12px;right:12px;width:9px;height:9px;background:var(--cia-gold,#d8ad54);transform:rotate(45deg);opacity:.72;pointer-events:none
+}
+/* Tarjetas con cortes diagonales sutiles: mantienen texto y controles sin rotarlos. */
+.card,.kpi,.chart-card,.attention,.module-card,.role-card,.settings-card,.account-card,
+.entity-card,.inv-card,.table-card,.question-card,.nx-question-intro,.nx-setup-hero{
+ border-radius:0!important;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+}
+/* Los campos de texto siguen siendo rectangulares para facilitar su uso. */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:var(--cia-gold,#d8ad54)}
+@media(max-width:650px){.card,.kpi,.chart-card,.attention,.module-card,.role-card,.settings-card,.account-card,.entity-card,.inv-card,.table-card,.question-card,.nx-question-intro,.nx-setup-hero{clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}}

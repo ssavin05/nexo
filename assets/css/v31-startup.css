@@ -1,0 +1,32 @@
+/* CIA V31: bienvenida guiada de primera ejecución */
+.nx-setup-hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(210px,.75fr);gap:24px;align-items:center;padding:clamp(22px,4vw,42px);margin:0 0 28px;border:1px solid #e0e7ff;border-radius:26px;background:radial-gradient(circle at 88% 20%,rgba(167,139,250,.22),transparent 34%),linear-gradient(135deg,#f8faff 0%,#f2f5ff 55%,#f8f3ff 100%);color:#18233f}
+.nx-setup-copy h1{max-width:620px;margin:14px 0 12px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.04em;color:#18233f}
+.nx-setup-copy>p{max-width:600px;color:#58647d;font-size:16px;line-height:1.65;margin:0}
+.nx-setup-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.nx-setup-points span{padding:8px 11px;border:1px solid #dce3f5;border-radius:999px;background:rgba(255,255,255,.8);font-size:12px;font-weight:650;color:#435170}
+.nx-setup-orbit{position:relative;min-height:210px;display:grid;place-items:center;isolation:isolate}
+.nx-setup-orbit:before,.nx-setup-orbit:after{content:"";position:absolute;border:1px solid #d3d9f6;border-radius:50%;width:178px;height:178px;z-index:-1}
+.nx-setup-orbit:after{width:132px;height:132px;border-style:dashed;transform:rotate(28deg)}
+.nx-setup-orbit span:not(.nx-orbit-core){position:absolute;padding:9px 12px;border:1px solid #e2e7f7;border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(38,52,99,.08);font-size:12px;font-weight:700;color:#455273}
+.nx-setup-orbit span:nth-child(1){top:10px;left:calc(50% - 30px)}.nx-setup-orbit span:nth-child(2){right:0;top:94px}.nx-setup-orbit span:nth-child(3){left:0;top:112px}
+.nx-orbit-core{display:grid;place-items:center;width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,#6557e8,#8b5cf6);box-shadow:0 12px 30px rgba(101,87,232,.3);color:white;font-size:30px;font-weight:800}
+.nx-privacy-note{margin:14px 0 0;color:#75809a;font-size:12px;line-height:1.5}
+.nx-question-intro{margin:20px 0 22px}.nx-question-intro>span{display:inline-block;margin-bottom:10px;color:#6557e8;font-size:10px;font-weight:800;letter-spacing:.13em}.nx-question-intro h1{max-width:760px;font-size:clamp(26px,3vw,36px);line-height:1.16;letter-spacing:-.025em}
+.nx-answer-grid{gap:10px!important}.nx-answer-grid button{min-height:62px;border-radius:15px!important;padding:15px 17px!important;text-align:left;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.nx-answer-grid button:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(48,55,100,.09)}
+@media(max-width:680px){.nx-setup-hero{grid-template-columns:1fr;padding:23px;border-radius:20px}.nx-setup-orbit{min-height:165px}.nx-setup-orbit:before{width:140px;height:140px}.nx-setup-orbit:after{width:105px;height:105px}.nx-setup-orbit span:nth-child(1){top:2px}.nx-setup-orbit span:nth-child(2){right:2px;top:72px}.nx-setup-orbit span:nth-child(3){left:2px;top:92px}.nx-orbit-core{width:54px;height:54px;border-radius:17px}}
+
+/* V32: el asistente funciona como pantalla de inicio, sin salto al fondo de la página. */
+html, body { min-height:100%; margin:0; }
+body:has(.nx-split) { height:100dvh; overflow:hidden; }
+#app:has(.nx-split) { height:100dvh; min-height:0; overflow:hidden; }
+.nx-split { height:100dvh; min-height:0; overflow:hidden; display:flex; flex-direction:column; }
+.nx-split .nx-top { flex:0 0 auto; box-sizing:border-box; }
+.nx-workspace { flex:1 1 auto; height:calc(100dvh - 70px); min-height:0; overflow:hidden; }
+.nx-split .nx-main { min-height:0; height:100%; box-sizing:border-box; overscroll-behavior:contain; scrollbar-gutter:stable; }
+.nx-preview { height:100%; min-height:0; overflow:auto; position:relative; overscroll-behavior:contain; }
+@media (max-width:900px) {
+ body:has(.nx-split), #app:has(.nx-split) { height:100dvh; overflow:hidden; }
+ .nx-workspace { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); height:calc(100dvh - 62px); }
+ .nx-split .nx-main { height:100%; overflow-y:auto; padding:24px 20px 32px; }
+ .nx-preview { display:none; }
+}

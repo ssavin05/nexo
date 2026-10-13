@@ -1,0 +1,85 @@
+/* Centro de Inteligencia Artificial — identidad oficial negro, morado y dorado */
+:root{
+ --bg:#08060d;--surface:#120e1b;--surface2:#1b1228;--text:#f5f0ff;--muted:#b7acc9;--line:#3c2b50;
+ --nav:#0d0913;--nav2:#1a1027;--blue:#9b5cff;--blue2:#6e35b5;--teal:#d6ad54;--green:#57c49a;--amber:#e0b85c;--red:#c05cff;
+ --shadow:0 16px 44px rgba(0,0,0,.42);--radius:12px;
+ --cia-red:#a66bff;--cia-red-dark:#6e35b5;--cia-pink:#211431;--cia-pink-soft:#130d1d;--cia-gold:#d8ad54;
+}
+html,body,#app{background:var(--bg);color:var(--text);font-family:'Trebuchet MS','Segoe UI',Arial,sans-serif}
+.brandmark{width:42px;height:42px;flex:0 0 42px;border-radius:0;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:none;background:linear-gradient(145deg,#b77aff,#6e35b5);display:grid;place-items:center;color:#120e1b;font-family:'Trebuchet MS','Segoe UI',sans-serif;font-size:15px;font-weight:700;letter-spacing:-.35px;box-shadow:0 6px 16px rgba(189,24,50,.25);padding:0}
+.brandmark::first-letter{transform:none}
+.btn.primary,.link,.eyebrow.dark,.hero h1 em,.feature-grid article>span{color:#120e1b}
+.btn.primary{background:linear-gradient(135deg,#9b5cff,#6e35b5);box-shadow:0 8px 20px rgba(189,24,50,.19)}
+.btn.primary:hover{background:#54258c}
+.btn.secondary{background:#211431;color:#d8ad54}
+.link,.demo-link{color:#d8ad54}
+.eyebrow{color:#a66bff}.eyebrow.dark{color:#a66bff}
+.hero h1 em{color:#a66bff}
+.feature-grid article>span{color:#a66bff}
+.auth-side{background:radial-gradient(ellipse at 90% 10%,rgba(225,40,70,.25),transparent 42%),linear-gradient(145deg,#241235,#9b5cff 60%,#120c1a)}
+.demo-link{color:#ffe0e5}
+.auth-main{background:linear-gradient(135deg,#120d1b,#1b1228)}
+.form input:focus,.modal-form input:focus,.settings-card input:focus{border-color:#b77aff;box-shadow:0 0 0 3px #352046}
+.sidebar{background:#120e1b;color:#e8def5;border-right:1px solid #3c2b50}
+.side-brand{color:#222}
+.collapse{background:#f8e8ec;color:#d8ad54}
+.company-switch{background:#120e1b6f7;border-color:#49335d}
+.company-switch strong{color:#f5f0ff}.company-switch small{color:#c5b1dc}
+.sidebar nav section>small{color:#c5b1dc}
+.nav-item{color:#c9bdd8}.nav-item i{color:#bba6d2}
+.nav-item:hover,.nav-item.active{background:#291a3a;color:#e4c16c}
+.nav-item.active i{color:#a66bff}
+.nav-item b{background:#a66bff;color:#120e1b}
+.side-user{border-top-color:#3c2b50}.side-user strong{color:#f5f0ff}.side-user small{color:#b7acc9}
+.avatar{background:#2b1b3d;color:#e4c16c}
+.appbar{background:rgba(255,255,255,.94);border-bottom-color:#eee1e5}
+.search{background:#120e1b8f9}.icon-btn.dot:after{background:#a66bff}
+.periods button.active{color:#d8ad54}
+.badge.info{background:#f8e5e9;color:#d8ad54}
+.mock-chart>span{background:linear-gradient(#bd8aff,#a90f2a)}
+.prototype-flag{color:#a14b5c}
+/* Onboarding, modal, selección y navegación: paleta negro, morado y dorado */
+[class*="nx-v"],.onboarding,.onboarding-shell,.wizard,.wizard-step{--blue:#a66bff;--blue2:#6e35b5;--primary:#a66bff;--accent:#a66bff}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:linear-gradient(135deg,#120e1bafb 0%,#1a1027 55%,#241333 100%)}
+.nx-v33-mark,.nx-v33-level-icon{background:linear-gradient(145deg,#b77aff,#6e35b5)!important;color:#120e1b!important}
+.nx-v33-kicker,.nx-v33-splash h1,.nx-v33-level-card.is-active,.nx-v33-level-card.active{color:#e4c16c}
+.nx-v33-loader i{background:linear-gradient(90deg,#a90f2a,#e4c16c,#a90f2a)!important}
+.nx-v33-level-card:hover,.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#a66bff!important;box-shadow:0 0 0 2px #f8dfe5,0 12px 28px rgba(189,24,50,.1)!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f0b7c2;outline-offset:2px}
+@media(max-width:760px){.brandmark{width:36px;height:36px;flex-basis:36px;font-size:13px}.sidebar{background:#120e1b}}
+
+/* Ajuste de legibilidad del monograma CIA dentro del rombo */
+.brandmark{
+  font-size:15px!important;
+  font-weight:750!important;
+  letter-spacing:-.25px!important;
+  line-height:1!important;
+  text-shadow:0 1px 1px rgba(70,0,12,.18);
+}
+@media(max-width:760px){.brandmark{font-size:13px!important}}
+
+/* Refinamiento de marca: letras centradas, compactas y proporcionadas al rombo */
+.brandmark{
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-family:Arial, Helvetica, sans-serif!important;
+  font-size:15px!important;
+  font-weight:750!important;
+  letter-spacing:-.25px!important;
+  line-height:1!important;
+  white-space:nowrap;
+  overflow:visible;
+}
+@media(max-width:760px){.brandmark{font-size:13px!important}}
+
+/* Logo oficial: se muestra como imagen, no como letras recreadas por CSS */
+.brandmark{background:transparent!important;clip-path:none!important;box-shadow:none!important;color:transparent!important;font-size:0!important;position:relative;overflow:hidden}
+.brandmark::before{content:"";position:absolute;inset:0;background:url("../icons/cia-logo.png") center/contain no-repeat}
+.btn.primary{color:#100a17}
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon{background:linear-gradient(135deg,#e8c66f,#b77aff)!important}
+.btn.secondary{background:#241633!important;color:#e4c16c!important}
+.sidebar,.appbar,.auth-main,.search,.company-switch{background:#100b17!important;color:#f5f0ff!important;border-color:#3c2b50!important}
+.sidebar nav section>small,.nav-item,.side-user small,.company-switch small{color:#c5b1dc!important}
+.nav-item:hover,.nav-item.active{background:#291a3a!important;color:#e4c16c!important}
+.card,.kpi,.chart-card,.attention,.module-card,.role-card,.settings-card,.account-card,.entity-card,.inv-card,.table-card,.question-card{background-color:#120e1b}

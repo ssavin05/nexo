@@ -1,0 +1,33 @@
+/* CIA — azul original estilo Nexo, con remates negros y dorados sutiles. */
+:root{
+ --bg:#061329; --surface:#091a33; --surface2:#0d2343; --text:#eef7ff; --muted:#a9c4df;
+ --line:#174a7a; --nav:#041024; --nav2:#082044;
+ --blue:#1687f8; --blue2:#0870d8; --teal:#39c5ff; --green:#32c7b5; --amber:#d4af37; --red:#1687f8;
+ --cia-red:#1687f8; --cia-red-dark:#075fb7; --cia-pink:#0a2140; --cia-pink-soft:#07172d; --cia-gold:#d4af37;
+}
+html,body,#app{background:#061329;color:#eef7ff}
+/* Azul de Nexo para acciones, accesos y creación; sin brillos multicolor. */
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon,.nx-v33-next,.auth-main .btn,.auth-side .btn{
+ background:#1687f8!important;color:#fff!important;border:1px solid #d4af37!important;
+ box-shadow:0 5px 18px rgba(22,135,248,.20)!important
+}
+.btn.primary:hover,.auth-main .btn:hover,.auth-side .btn:hover{background:#2698ff!important}
+.btn.secondary{background:#091a33!important;color:#dbeeff!important;border:1px solid #24517d!important}
+.link,.demo-link,.periods button.active,.eyebrow,.hero h1 em{color:#7ecbff!important}
+.auth-side,.auth-main,.auth-card,.login-panel,.register-panel{background:#07162b!important}
+.auth-side{background:linear-gradient(145deg,#061329 0%,#0a2446 100%)!important;border-color:#d4af37!important}
+.auth-main{background:#07162b!important}
+.sidebar,.appbar{background:#061329!important;border-color:#163a60!important}
+.nav-item.active,.sidebar .active{background:#0b3a70!important;border-color:#d4af37!important;color:#fff!important}
+input,select,textarea,.field,input[type=email],input[type=password]{background:#061329!important;color:#eef7ff!important;border-color:#20517f!important}
+input:focus,select:focus,textarea:focus{border-color:#39c5ff!important;box-shadow:0 0 0 2px rgba(57,197,255,.13)!important}
+.card,.module-card,.feature-grid article,.settings-card,.role-card,.auth-card,.plan-card{background:#091a30!important;border-color:#17416b!important}
+.card:hover,.module-card:hover,.feature-grid article:hover,.settings-card:hover,.role-card:hover{border-color:#d4af37!important}
+/* El dorado solo como remate visual, no como segundo color de acción. */
+.brandmark{box-shadow:0 0 0 1px rgba(212,175,55,.55),0 4px 14px rgba(0,0,0,.25)!important}
+.nx-answer-grid button:before,.nx-business-grid button:before,.nx-product-grid button:before,
+.module-card:before,.role-card:before,.settings-card:before,.feature-grid article:before{background:#d4af37!important}
+.progress-fill,.progress-bar>span,.step.active,.step-indicator.active{background:#1687f8!important;border-color:#d4af37!important}
+.badge,.tag{background:#0c3158!important;color:#bce8ff!important;border-color:#24517d!important}
+/* Mantener los rombos existentes y evitar efectos arcoíris. */
+*,*::before,*::after{scrollbar-color:#174a7a #061329}

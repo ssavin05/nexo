@@ -1,0 +1,51 @@
+/* CIA ERP visual repair v2: contrast, spacing, cards and responsive layout */
+:root{--bg:#f3f7ff;--surface:#fff;--surface2:#f8fbff;--text:#142642;--muted:#607391;--line:#dfe8f5;--shadow:0 8px 24px rgba(24,55,100,.07)}
+html,body,#app{min-height:100%;color:var(--text)}
+.shell{min-height:100vh;grid-template-columns:270px minmax(0,1fr)!important;background:var(--bg)!important}
+.shell .sidebar{width:auto;min-width:0;overflow:hidden}
+.shell .main{min-width:0;width:100%;overflow-x:hidden}
+.shell .page{padding:24px clamp(18px,2vw,34px) 36px!important;max-width:none;width:100%;}
+.shell .page-head{gap:18px;align-items:center;margin-bottom:20px}
+.shell .page-head h1{font-size:clamp(24px,2vw,32px);line-height:1.2;letter-spacing:-.025em;color:#10274a!important}
+.shell .page-head p{font-size:14px;color:#627795!important;margin-top:5px}
+.shell .head-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.shell .summary-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:#fff;border:1px solid #e0e9f5;border-radius:15px;overflow:hidden;margin:0 0 16px;box-shadow:0 4px 15px rgba(29,61,110,.035)}
+.shell .summary-strip>div{min-width:0;padding:16px 20px;border-right:1px solid #e5edf7}
+.shell .summary-strip>div:last-child{border-right:0}
+.shell .summary-strip small{display:block;font-size:11px;color:#607795!important;margin-bottom:5px}
+.shell .summary-strip strong{display:block;color:#10274a!important;font-size:18px;line-height:1.25}
+.shell .cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch}
+.shell .entity-card,.shell .inv-card,.shell .account-card,.shell .table-card,.shell .role-card,.shell .settings-card{background:#fff!important;color:#173052!important;border:1px solid #dfe8f4!important;border-radius:15px!important;clip-path:none!important;box-shadow:0 5px 18px rgba(25,57,102,.055)!important;min-width:0;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.shell .entity-card{padding:17px!important;display:flex;flex-direction:column;gap:14px;cursor:pointer}
+.shell .entity-card:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(25,57,102,.1)!important;border-color:#b9d0f4!important}
+.shell .entity-card :where(h3,strong,b){color:#173052!important}
+.shell .entity-card :where(small,p,span){color:#627795}
+.shell .entity-head{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:11px;align-items:center;min-width:0}
+.shell .entity-head>div{min-width:0}
+.shell .entity-head h3{font-size:14px;line-height:1.35;margin:0 0 4px;overflow-wrap:anywhere}
+.shell .entity-head small{display:block;font-size:10px;overflow-wrap:anywhere}
+.shell .entity-avatar{width:38px!important;height:38px!important;flex:0 0 38px;background:#edf4ff!important;color:#2360c7!important;border-radius:12px!important;clip-path:none!important;font-size:11px!important}
+.shell .entity-card .badge{white-space:nowrap;font-size:10px;padding:5px 9px;border-radius:999px;background:#e9f8ef!important;color:#167447!important;border:1px solid #c9eed8}
+.shell .entity-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;background:#f5f8fd!important;border:1px solid #e7edf6;border-radius:11px;padding:11px 10px!important;min-width:0}
+.shell .entity-metrics>div{min-width:0}
+.shell .entity-metrics small{display:block;font-size:9px;color:#6b7e98!important;margin-bottom:4px}
+.shell .entity-metrics strong{display:block;font-size:12px;line-height:1.3;color:#132b4b!important;overflow-wrap:anywhere}
+.shell .entity-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;font-size:10px}
+.shell .entity-foot span{color:#667b98!important;overflow-wrap:anywhere}
+.shell .entity-foot b{color:#2468d8!important;white-space:nowrap;font-size:10px}
+.shell .card,.shell .kpi,.shell .chart-card,.shell .attention,.shell .module-card,.shell .question-card{border-radius:15px;clip-path:none!important}
+.shell .btn{min-height:40px;border-radius:10px;font-size:13px}
+.shell .btn.primary{background:linear-gradient(135deg,#2378f6,#075ce5)!important;color:white!important}
+.shell .search{max-width:min(460px,45vw)}
+@media(max-width:1350px){.shell .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shell{grid-template-columns:245px minmax(0,1fr)!important}}
+@media(max-width:900px){.shell{grid-template-columns:76px minmax(0,1fr)!important}.shell .sidebar{padding:12px 8px}.shell .page{padding:18px!important}.shell .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shell .page-head{align-items:flex-start}}
+@media(max-width:620px){.shell .cards-grid{grid-template-columns:minmax(0,1fr)}.shell .summary-strip{grid-template-columns:1fr}.shell .summary-strip>div{border-right:0;border-bottom:1px solid #e5edf7;padding:12px 15px}.shell .summary-strip>div:last-child{border-bottom:0}.shell .page-head{flex-direction:column}.shell .head-actions{width:100%}.shell .head-actions .btn{flex:1}.shell .entity-card{padding:14px!important}.shell .entity-metrics{gap:6px;padding:9px!important}.shell .entity-metrics strong{font-size:11px}}
+html[data-theme="dark"] .shell .entity-card,html[data-theme="dark"] .shell .inv-card,html[data-theme="dark"] .shell .account-card,html[data-theme="dark"] .shell .table-card,html[data-theme="dark"] .shell .role-card,html[data-theme="dark"] .shell .settings-card{background:#101d36!important;border-color:#263b60!important;color:#e6eefc!important}
+html[data-theme="dark"] .shell .entity-card :where(h3,strong,b){color:#e6eefc!important}
+html[data-theme="dark"] .shell .entity-head :where(small),html[data-theme="dark"] .shell .entity-foot span{color:#9fb3d3!important}
+html[data-theme="dark"] .shell .entity-metrics{background:#0c172b!important;border-color:#263b60!important}
+html[data-theme="dark"] .shell .entity-metrics small{color:#9fb3d3!important}
+html[data-theme="dark"] .shell .entity-metrics strong{color:#edf4ff!important}
+html[data-theme="dark"] .shell .summary-strip{background:#101d36!important;border-color:#263b60!important}
+html[data-theme="dark"] .shell .summary-strip>div{border-color:#263b60!important}
+html[data-theme="dark"] .shell .summary-strip strong{color:#edf4ff!important}

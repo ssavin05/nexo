@@ -1,0 +1,21 @@
+{
+  "name": "Centro de Inteligencia Artificial",
+  "short_name": "Centro de Inteligencia Artificial",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#100b17",
+  "description": "Todo tu negocio, conectado.",
+  "icons": [
+    {
+      "src": "assets/icons/cia-logo.png",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/icons/cia-logo.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+/* CIA — paleta original de Nexo: azul vivo, fondos claros y negro azulado; dorado solo como acento. */
+:root{
+ --bg:#f4f7fb; --surface:#ffffff; --surface2:#f8fafc; --text:#122033; --muted:#6b7c93; --line:#e3e9f2;
+ --nav:#0c1728; --nav2:#111f34; --blue:#2f6df6; --blue2:#1f57d6; --teal:#0ea5a4; --green:#16a364; --amber:#d4af37; --red:#df4d56;
+ --shadow:0 16px 44px rgba(19,43,78,.08); --cia-gold:#d4af37;
+}
+html,body,#app{background:var(--bg);color:var(--text)}
+/* Mantener el azul original de Nexo como color dominante. */
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon,.nx-v33-next,.auth-main .btn,.auth-side .btn{background:#2f6df6!important;color:#fff!important;border:1px solid #d4af37!important;box-shadow:0 8px 20px rgba(47,109,246,.20)!important}
+.btn.primary:hover,.auth-main .btn:hover,.auth-side .btn:hover{background:#1f57d6!important}
+.btn.secondary{background:#edf3ff!important;color:#245ac7!important;border:1px solid #dbe3ee!important}
+.link,.demo-link,.periods button.active,.eyebrow,.hero h1 em{color:#2f6df6!important}
+.auth-side{background:linear-gradient(145deg,#0c1728,#111f34)!important;color:#fff!important;border-color:#d4af37!important}
+.auth-side p{color:#adc0dc!important}.auth-main{background:#f7f9fc!important}
+.auth-card,.login-panel,.register-panel{background:#fff!important;color:#122033!important;border:1px solid #e3e9f2!important;box-shadow:0 16px 44px rgba(19,43,78,.08)!important}
+.sidebar,.appbar{background:#0c1728!important;color:#fff!important;border-color:rgba(212,175,55,.35)!important}
+.nav-item.active,.sidebar .active{background:#1f57d6!important;color:#fff!important;border-color:#d4af37!important}
+input,select,textarea,.field,input[type=email],input[type=password],.form input,.modal-form input,.modal-form select,.settings-card input{background:#fff!important;color:#122033!important;border-color:#dbe3ee!important}
+input:focus,select:focus,textarea:focus,.form input:focus,.modal-form input:focus,.settings-card input:focus{border-color:#2f6df6!important;box-shadow:0 0 0 3px rgba(47,109,246,.12)!important}
+.card,.panel,.modal,.module-card,.feature-grid article,.settings-card,.role-card,.plan-card,.stat-card{background:#fff!important;color:#122033!important;border-color:#e3e9f2!important}
+.card:hover,.module-card:hover,.settings-card:hover,.role-card:hover,.plan-card:hover{border-color:#d4af37!important}
+.brandmark{box-shadow:0 0 0 1px rgba(212,175,55,.45),0 8px 22px rgba(47,109,246,.18)!important}
+/* Dorado únicamente para remates; sin fondos multicolor ni tema arcoíris. */
+.nx-answer-grid button:before,.nx-business-grid button:before,.nx-product-grid button:before{background:#d4af37!important}
+.progress-fill,.progress-bar>span,.step.active,.step-indicator.active{background:#2f6df6!important;border-color:#d4af37!important}
+.badge,.tag{background:#edf3ff!important;color:#245ac7!important;border-color:#dbe3ee!important}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:#f4f7fb!important;color:#122033!important}
+.nx-v33-level-card{background:#fff!important;color:#122033!important;border-color:#e3e9f2!important}
+.nx-v33-level-card:hover,.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#d4af37!important;box-shadow:0 0 0 1px rgba(212,175,55,.45),0 12px 28px rgba(19,43,78,.10)!important}
+.nx-v33-loader i{background:#2f6df6!important;box-shadow:0 0 8px rgba(47,109,246,.2)!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d4af37!important;outline-offset:2px}

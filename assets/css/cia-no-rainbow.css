@@ -1,0 +1,28 @@
+/* Identidad sobria: negro + morado + dorado. Sin arcoíris ni degradados multicolor. */
+:root{
+ --bg:#08070b;--surface:#111016;--surface2:#191521;--text:#f5f1e8;--muted:#b8b0c4;--line:#3a3047;
+ --nav:#0b0a0f;--nav2:#171320;--blue:#8b5bd6;--blue2:#6339a0;--teal:#d6ad54;--green:#d6ad54;--amber:#d6ad54;--red:#8b5bd6;
+ --cia-red:#8b5bd6;--cia-red-dark:#6339a0;--cia-pink:#211a2b;--cia-pink-soft:#14111a;--cia-gold:#d6ad54;
+}
+html,body,#app{background:#08070b;color:#f5f1e8}
+/* Morado uniforme para acciones principales */
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon{background:#7044ad!important;color:#fff!important;box-shadow:0 5px 18px rgba(112,68,173,.18)!important}
+.btn.primary:hover{background:#8054bd!important}
+.btn.secondary{background:#1b1623!important;color:#dfbd70!important;border-color:#49395b!important}
+.link,.demo-link,.periods button.active{color:#dfbd70!important}
+.eyebrow,.hero h1 em,.feature-grid article>span,.nav-item.active i{color:#b48be8!important}
+.auth-side{background:linear-gradient(145deg,#0b0a0f 0%,#21172f 100%)!important}
+.auth-main{background:#111016!important}
+.sidebar{background:#100e14!important;border-right-color:#3a3047!important}
+.appbar{background:#111016!important;border-bottom-color:#3a3047!important}
+.nav-item:hover,.nav-item.active{background:#251b32!important;color:#f0e4ff!important}
+.nav-item b,.icon-btn.dot:after{background:#8b5bd6!important;color:#fff!important}
+.avatar{background:#241b30!important;color:#dfbd70!important}
+.mock-chart>span{background:#8b5bd6!important}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:linear-gradient(135deg,#0b0a0f 0%,#171320 60%,#21172f 100%)!important}
+.nx-v33-loader i{background:#d6ad54!important}
+.nx-v33-level-card:hover,.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#8b5bd6!important;box-shadow:0 0 0 1px #8b5bd6,0 12px 28px rgba(0,0,0,.28)!important}
+.form input:focus,.modal-form input:focus,.settings-card input:focus{border-color:#8b5bd6!important;box-shadow:0 0 0 3px rgba(139,91,214,.18)!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d6ad54!important;outline-offset:2px}
+/* Evitar gradientes arcoíris en componentes y gráficos */
+[class*="gradient"],.gradient,.rainbow{background-image:none}

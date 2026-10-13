@@ -1,0 +1,273 @@
+/* CIA · funciones extra: estilos (se carga al final) */
+
+/* ---------- microinteracciones globales ---------- */
+html{scroll-behavior:smooth}
+::selection{background:rgba(200,160,74,.28)}
+.shell :focus-visible{outline:2px solid #3b82ff;outline-offset:2px;border-radius:8px}
+.shell button{transition:transform .15s ease,background-color .2s,box-shadow .2s,border-color .2s,color .2s}
+.shell button:active{transform:scale(.98)}
+.shell .main ::-webkit-scrollbar,.shell .sidebar ::-webkit-scrollbar{width:8px;height:8px}
+.shell ::-webkit-scrollbar-thumb{background:rgba(120,150,200,.35);border-radius:8px}
+.shell ::-webkit-scrollbar-track{background:transparent}
+.shell .card,.shell .kpi{transition:transform .22s ease,box-shadow .25s ease,border-color .25s}
+.shell .card:hover{box-shadow:0 10px 26px rgba(27,62,118,.11)!important}
+
+/* ---------- animación de entrada (solo al cambiar de pantalla) ---------- */
+@keyframes ciaUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes ciaDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes ciaFade{from{opacity:0}to{opacity:1}}
+@keyframes ciaPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes ciaPulse{0%,100%{box-shadow:0 10px 20px rgba(31,107,255,.28),0 0 0 0 rgba(31,107,255,.35)}50%{box-shadow:0 10px 20px rgba(31,107,255,.28),0 0 0 10px rgba(31,107,255,0)}}
+.shell .page.ent .page-head{animation:ciaUp .5s both}
+.shell .page.ent .kpi{animation:ciaUp .55s both}
+.shell .page.ent .kpi:nth-child(2){animation-delay:.05s}.shell .page.ent .kpi:nth-child(3){animation-delay:.1s}
+.shell .page.ent .kpi:nth-child(4){animation-delay:.15s}.shell .page.ent .kpi:nth-child(5){animation-delay:.2s}.shell .page.ent .kpi:nth-child(6){animation-delay:.25s}
+.shell .page.ent .ai-dashboard-card{animation:ciaUp .6s .3s both}
+.shell .page.ent .dashboard-grid{animation:ciaUp .6s .4s both}
+.shell .page.ent .dashboard-grid.thirds{animation-delay:.5s}.shell .page.ent .extra-grid{animation-delay:.6s}
+.shell .page.ent .ref-chart .ln{stroke-dasharray:1;animation:ciaDraw 1.4s .5s ease-out both}
+.shell .page.ent .ref-chart .dt{animation:ciaPop .4s 1.5s both;transform-box:fill-box;transform-origin:center}
+.shell .page.ent .ref-chart path:not(.ln){animation:ciaFade 1s .9s both}
+.shell .page.ent:not(.x) > *:not(.page-head):not(.kpi-grid):not(.ai-dashboard-card):not(.dashboard-grid){animation:ciaUp .45s both}
+.shell .ai-dashboard-icon{animation:ciaPulse 3.2s ease-in-out infinite}
+.shell .ai-dashboard-icon .ci{animation:ciaSpin 7s linear infinite}
+@keyframes ciaSpin{0%,80%{transform:rotate(0)}100%{transform:rotate(90deg)}}
+.shell .eyebrow::before{animation:ciaGrow 1.2s ease both}
+@keyframes ciaGrow{from{width:0}to{width:16px}}
+
+/* ---------- tarjetas KPI interactivas ---------- */
+.shell .kpi{position:relative;overflow:hidden}
+.shell .kpi.clickable{cursor:pointer}
+.shell .kpi.clickable:hover{transform:translateY(-3px);border-color:#c9daf7!important;box-shadow:0 14px 28px rgba(27,62,118,.14)!important}
+.shell .kpi .spark{position:absolute;right:16px;top:17px;opacity:.95}
+.shell .kpi.clickable:hover .kpi-ic{background:#1f6bff;color:#fff}
+.shell .kpi-ic{transition:background .2s,color .2s}
+
+/* ---------- tooltip de la gráfica ---------- */
+.shell .line-chart.ref-chart{cursor:crosshair}
+.shell .ch-tip{position:absolute;transform:translate(-50%,-100%);background:#0f2a5c;color:#fff;padding:7px 11px;border-radius:10px;font-size:12.5px;line-height:1.25;pointer-events:none;opacity:0;transition:opacity .15s;white-space:nowrap;text-align:center;box-shadow:0 8px 18px rgba(15,42,92,.28)}
+.shell .ch-tip span{display:block;opacity:.7;font-size:11.5px}
+.shell .ch-tip b{font-size:14px}
+.shell .ch-guide{stroke:#1f6bff;stroke-opacity:.35;stroke-dasharray:4 4;opacity:0;transition:opacity .15s}
+.shell .ref-chart .dt{transition:r .15s}
+.shell .ref-chart .dt.on{r:6.5;stroke-width:2.5}
+
+/* ---------- caja "Pregúntale a CIA" ---------- */
+.shell .ai-ask{display:flex;align-items:center;gap:10px;height:48px;max-width:640px;margin:0 0 12px;padding:0 6px 0 16px;background:#fff;border:1px solid #dbe6f8;border-radius:13px;box-shadow:0 3px 10px rgba(27,62,118,.06);transition:border-color .2s,box-shadow .2s}
+.shell .ai-ask:focus-within{border-color:#1f6bff;box-shadow:0 0 0 4px rgba(31,107,255,.12)}
+.shell .ai-ask .aa-ic{width:19px;height:19px;color:#1f6bff;fill:#1f6bff;stroke:#1f6bff;stroke-width:1;flex:0 0 19px}
+.shell .ai-ask input{flex:1;border:0;outline:0;background:transparent;font-size:15px;color:#0e2750;min-width:0}
+.shell .ai-ask input::placeholder{color:#8da0bf}
+.shell .ai-ask button{width:38px;height:38px;border-radius:10px;border:0;background:linear-gradient(135deg,#1c7bff,#0b5de6);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 14px rgba(24,104,240,.28)}
+.shell .ai-ask button .ci{width:18px;height:18px}
+
+/* ---------- exportar ---------- */
+.shell .head-actions{display:flex;align-items:center;gap:12px}
+.shell .btn-export{display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 18px;border-radius:14px;background:rgba(255,255,255,.95);border:1px solid #e6edf8;box-shadow:0 3px 12px rgba(34,68,120,.07);color:#15305f;font-size:15px;font-weight:600;cursor:pointer}
+.shell .btn-export .ci{width:19px;height:19px;color:#1f6bff}
+.shell .btn-export:hover{border-color:#bcd2f7;transform:translateY(-1px)}
+
+/* ---------- fila extra: dona + acciones rápidas ---------- */
+.shell .extra-grid{grid-template-columns:minmax(0,1.78fr) minmax(0,1fr)!important}
+.shell .cd-card,.shell .quick-card{padding:18px 22px 20px!important;border-radius:16px!important}
+.shell .cd-body{display:flex;align-items:center;gap:36px;padding:8px 6px 0}
+.shell .cd-svg{width:170px;height:170px;flex:0 0 170px}
+.shell .cd-svg .cd-seg{transition:stroke-width .2s,opacity .2s;cursor:pointer}
+.shell .cd-svg:hover .cd-seg{opacity:.55}.shell .cd-svg .cd-seg:hover{opacity:1;stroke-width:22}
+.shell .cd-svg .cd-v{font-size:22px;font-weight:700;fill:#0e2750}
+.shell .cd-svg .cd-l{font-size:10.5px;fill:#6f86ab}
+.shell .cd-legend{list-style:none;margin:0;padding:0;flex:1;display:grid;gap:11px}
+.shell .cd-legend li{display:flex;align-items:center;gap:12px;font-size:15px;color:#27426f}
+.shell .cd-legend i{width:11px;height:11px;border-radius:4px;flex:0 0 11px}
+.shell .cd-legend span{flex:1}.shell .cd-legend b{font-weight:650;color:#0e2750}
+.shell .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.shell .quick-grid button{display:flex;align-items:center;gap:11px;height:54px;padding:0 14px;border-radius:13px;background:#f5f8fe;border:1px solid #e5edf9;color:#16305e;font-size:14.5px;font-weight:600;cursor:pointer;text-align:left}
+.shell .quick-grid button span{width:32px;height:32px;border-radius:10px;background:#e4eeff;color:#2a67e8;display:grid;place-items:center;flex:0 0 32px;transition:background .2s,color .2s}
+.shell .quick-grid button .ci{width:18px;height:18px}
+.shell .quick-grid button:hover{background:#fff;border-color:#bcd2f7;transform:translateY(-2px);box-shadow:0 8px 18px rgba(27,62,118,.1)}
+.shell .quick-grid button:hover span{background:#1f6bff;color:#fff}
+.shell kbd{font:600 11px/1 "Inter",system-ui,sans-serif;padding:3px 6px;border-radius:6px;background:#eef3fb;color:#6a82a8;border:1px solid #dfe8f6}
+
+/* ---------- menú lateral: colapsable, más módulos, insignias ---------- */
+.shell{transition:grid-template-columns .25s ease}
+.shell .sidebar nav{overflow-y:auto!important;overflow-x:hidden;margin-right:-8px;padding-right:8px}
+.shell .sidebar nav .nav-item{position:relative;transition:background .2s,transform .2s,padding .2s}
+.shell .sidebar nav .nav-item:hover{transform:translateX(3px)}
+.shell .sidebar nav .nav-item.active::before{content:"";position:absolute;left:-24px;top:10px;bottom:10px;width:4px;border-radius:0 4px 4px 0;background:#e3c273;box-shadow:0 0 12px rgba(227,194,115,.7)}
+.shell .nbadge{margin-left:auto;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#e8a21d;color:#241700;font-size:12px;font-weight:700;display:grid;place-items:center}
+.shell .more-ch{width:16px;height:16px;margin-left:auto;transition:transform .25s}
+.shell .more-toggle.open .more-ch{transform:rotate(180deg)}
+.shell .more-list{display:grid;gap:2px;max-height:0;overflow:hidden;transition:max-height .3s ease;padding-left:10px;border-left:1px solid rgba(190,211,244,.12);margin-left:22px}
+.shell .more-list.open{max-height:900px;margin-bottom:8px}
+.shell .more-item{display:flex;align-items:center;gap:10px;height:36px;padding:0 10px;border-radius:8px;border:0;background:transparent;color:#b9c8e3;font-size:14px;cursor:pointer;text-align:left}
+.shell .more-item .md{width:8px;height:8px;color:#5f7bb0;flex:0 0 8px}
+.shell .more-item:hover{background:rgba(255,255,255,.07);color:#fff}
+.shell .more-item.active{color:#fff;background:rgba(31,107,255,.28)}.shell .more-item.active .md{color:#e3c273}
+.shell .collapse{transition:transform .25s;cursor:pointer}
+.shell.collapsed{grid-template-columns:84px minmax(0,1fr)!important}
+.shell.collapsed .sidebar{padding:20px 14px 18px!important}
+.shell.collapsed .brand-words,.shell.collapsed .company-switch,.shell.collapsed .nav-item span,.shell.collapsed .more-list,.shell.collapsed .more-ch,.shell.collapsed .side-user>div:not(.avatar),.shell.collapsed .side-user button{display:none!important}
+.shell.collapsed .side-brand{flex-direction:column;height:auto!important;gap:12px;padding-bottom:10px!important}
+.shell.collapsed .side-brand .brandmark{width:50px!important;height:50px!important;flex-basis:50px!important}
+.shell.collapsed .collapse{margin:0;transform:rotate(180deg)}
+.shell.collapsed .sidebar nav .nav-item{justify-content:center;padding:0!important}
+.shell.collapsed .nbadge{position:absolute;top:2px;right:6px;margin:0;min-width:18px;height:18px;font-size:10.5px}
+.shell.collapsed .side-user{grid-template-columns:1fr!important;justify-items:center}
+.shell.collapsed .sidebar nav .nav-item.active::before{left:-14px}
+
+/* ---------- campana con contador ---------- */
+.shell .appbar .icon-btn.bell::after{content:none!important}
+.shell .bell-n{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:10px;background:#f59e0b;color:#2a1a00;font-size:11px;font-weight:700;display:grid;place-items:center;border:2px solid #f5f8ff;box-sizing:content-box}
+
+/* ---------- menú de usuario ---------- */
+.shell .app-actions{position:relative}
+.shell .user-menu{position:absolute;right:0;top:58px;width:290px;z-index:60;background:#fff;border:1px solid #e3ebf8;border-radius:16px;box-shadow:0 22px 50px rgba(20,48,98,.22);padding:8px;animation:ciaUp .18s both}
+.shell .um-head{display:flex;gap:12px;align-items:center;padding:10px 10px 12px}
+.shell .um-av{width:42px;height:42px;border-radius:50%;background:#1f46b6;color:#fff;display:grid;place-items:center;font-weight:600}
+.shell .um-head strong{display:block;font-size:15px;color:#0e2750}.shell .um-head small{color:#7388aa;font-size:12.5px}
+.shell .um-sep{height:1px;background:#edf2fa;margin:6px 4px}
+.shell .um-title{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8da0bf;padding:6px 12px 4px;font-weight:600}
+.shell .user-menu button{display:flex;align-items:center;gap:12px;width:100%;height:40px;padding:0 12px;border:0;background:transparent;border-radius:10px;color:#1b335f;font-size:14.5px;cursor:pointer;text-align:left}
+.shell .user-menu button .ci{width:18px;height:18px;color:#4a6aa0}
+.shell .user-menu button span{flex:1}
+.shell .user-menu button:hover{background:#f1f6ff}
+
+/* ---------- buscador de comandos ---------- */
+.shell .pal-back{position:fixed!important;inset:0;z-index:200;background:rgba(7,18,40,.45)!important;backdrop-filter:blur(7px);display:flex!important;align-items:flex-start;justify-content:center;padding-top:11vh}
+.shell .pal{width:min(660px,92vw);background:#fff;border:1px solid #e0e9f8;border-radius:18px;box-shadow:0 30px 80px rgba(7,18,40,.4);overflow:hidden;animation:ciaUp .2s both}
+.shell .pal-in{display:flex;align-items:center;gap:12px;padding:0 18px;height:60px;border-bottom:1px solid #edf2fa}
+.shell .pal-in .ci{width:21px;height:21px;color:#4a6aa0;flex:0 0 21px}
+.shell .pal-in input{flex:1;border:0!important;outline:0!important;background:transparent!important;font-size:17px;color:#0e2750;box-shadow:none!important;padding:0!important}
+.shell .pal-list{max-height:min(420px,52vh);overflow:auto;padding:6px 8px 10px}
+.shell .pal-g{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8da0bf;padding:12px 12px 5px;font-weight:600}
+.shell .pal-i{display:flex;align-items:center;gap:13px;width:100%;height:44px;padding:0 12px;border:0;border-radius:11px;background:transparent;color:#17305c;font-size:15px;cursor:pointer;text-align:left}
+.shell .pal-i .ci{width:18px;height:18px;color:#5b78ad;flex:0 0 18px}
+.shell .pal-i span{flex:1}
+.shell .pal-i em{font-style:normal;opacity:0;color:#7f96bb;font-size:13px}
+.shell .pal-i.sel{background:#eaf2ff}.shell .pal-i.sel em{opacity:1}.shell .pal-i.sel .ci{color:#1f6bff}
+.shell .pal-empty{padding:34px;text-align:center;color:#7d90b0}
+.shell .pal-foot{display:flex;gap:18px;padding:10px 18px;border-top:1px solid #edf2fa;background:#f8fbff;font-size:12px;color:#7d90b0}
+.shell .pal-foot kbd{margin-right:5px}
+
+/* ---------- atajos de teclado ---------- */
+.keys-back{position:fixed;inset:0;z-index:500;background:rgba(7,18,40,.5);backdrop-filter:blur(6px);display:grid;place-items:center;font-family:"Inter",system-ui,sans-serif}
+.keys{width:min(460px,92vw);max-height:86vh;overflow:auto;background:#fff;border-radius:18px;padding:20px 22px;box-shadow:0 30px 80px rgba(7,18,40,.4);animation:ciaUp .2s both;color:#0e2750}
+.keys-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.keys-h h3{margin:0;font-size:19px}.keys-h button{border:0;background:#f1f5fc;width:32px;height:32px;border-radius:9px;font-size:20px;cursor:pointer;color:#35517f}
+.keys .kr{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eef3fb;font-size:14.5px;color:#27426f}
+.keys .kr:last-child{border:0}
+.keys kbd{font:600 12px/1 inherit;padding:5px 9px;border-radius:7px;background:#eef3fb;color:#4a6590;border:1px solid #dbe5f5}
+
+/* ---------- tema oscuro (diseño nuevo) ---------- */
+html[data-theme="dark"]{color-scheme:dark;--donut-track:#1b2b4a}
+html[data-theme="dark"],html[data-theme="dark"] body,html[data-theme="dark"] #app{background:#070f20!important;color:#e6eefc!important}
+html[data-theme="dark"] .shell,html[data-theme="dark"] .shell .main{background-color:#0a1428!important;color:#e6eefc!important}
+html[data-theme="dark"] .shell .main{
+  background-image:radial-gradient(ellipse 55% 38% at 82% 0%,rgba(40,80,160,.35),transparent 70%),radial-gradient(ellipse 48% 42% at 96% 45%,rgba(30,70,150,.25),transparent 70%),linear-gradient(125deg,#0a1428,#0b1730 55%,#08111f)!important}
+html[data-theme="dark"] .shell .bg-waves{opacity:.75;mix-blend-mode:screen}
+html[data-theme="dark"] .shell .page-head h1,html[data-theme="dark"] .shell .ai-dashboard-main h3,html[data-theme="dark"] .shell .card-head h3,html[data-theme="dark"] .shell .attention>button strong,html[data-theme="dark"] .shell .cd-legend b,html[data-theme="dark"] .shell .cd-svg .cd-v{color:#f0f5ff!important;fill:#f0f5ff}
+html[data-theme="dark"] .shell .page-head p,html[data-theme="dark"] .shell .ai-dashboard-main p,html[data-theme="dark"] .shell .card-head p,html[data-theme="dark"] .shell .attention>button small,html[data-theme="dark"] .shell .kpi .kpi-cap,html[data-theme="dark"] .shell .cd-svg .cd-l{color:#8fa5c9!important;fill:#8fa5c9}
+html[data-theme="dark"] .shell .kpi,html[data-theme="dark"] .shell .card,html[data-theme="dark"] .shell .chart-card,html[data-theme="dark"] .shell .attention,html[data-theme="dark"] .shell .dashboard-grid>.card{background:rgba(16,29,54,.88)!important;border-color:#1f3157!important;color:#e6eefc!important;box-shadow:0 6px 20px rgba(0,0,0,.28)!important}
+html[data-theme="dark"] .shell .kpi strong{color:#f0f5ff!important}html[data-theme="dark"] .shell .kpi strong sup{color:#9db8ea}
+html[data-theme="dark"] .shell .kpi-top small{color:#b8c9e8!important}
+html[data-theme="dark"] .shell .kpi-ic,html[data-theme="dark"] .shell .quick-grid button span{background:rgba(47,107,255,.18);color:#7fb0ff}
+html[data-theme="dark"] .shell .ai-dashboard-card{background:radial-gradient(ellipse 40% 140% at 100% 0,rgba(205,170,95,.14),transparent 60%),linear-gradient(100deg,rgba(18,33,62,.96),rgba(14,28,56,.92))!important;border-color:#22375f!important}
+html[data-theme="dark"] .shell .ai-quick-row button,html[data-theme="dark"] .shell .ai-ask{background:#0f1c36!important;border-color:#22375f!important;color:#cfe0ff!important}
+html[data-theme="dark"] .shell .ai-ask input{color:#e6eefc}
+html[data-theme="dark"] .shell .search,html[data-theme="dark"] .shell .appbar .icon-btn,html[data-theme="dark"] .shell .sel-wrap select,html[data-theme="dark"] .shell .date-pill,html[data-theme="dark"] .shell .btn-export{background:rgba(16,29,54,.92)!important;border-color:#22375f!important;color:#e0eaff!important}
+html[data-theme="dark"] .shell .search span,html[data-theme="dark"] .shell .search .se-ic,html[data-theme="dark"] .shell .sel-wrap .sel-ic,html[data-theme="dark"] .shell .date-pill .dp-ic,html[data-theme="dark"] .shell .date-pill .dp-ic2,html[data-theme="dark"] .shell .me-chip,html[data-theme="dark"] .shell .appbar .icon-btn{color:#cfe0ff!important}
+html[data-theme="dark"] .shell .search kbd,html[data-theme="dark"] .shell kbd{background:#16264a!important;color:#8fa5c9!important;border-color:#25396a}
+html[data-theme="dark"] .shell .bell-n{border-color:#0a1428}
+html[data-theme="dark"] .shell .ref-chart .gl{stroke:#1d2d4d}
+html[data-theme="dark"] .shell .ref-chart .yl,html[data-theme="dark"] .shell .ref-chart .xl{fill:#8fa5c9}
+html[data-theme="dark"] .shell .ref-chart .dt{stroke:#101d36}
+html[data-theme="dark"] .shell .chart-card .badge.success{background:#0f1c36!important;border-color:#25396a!important;color:#7fb0ff!important}
+html[data-theme="dark"] .shell .attention .attention-icon.warning{background:rgba(209,147,32,.18)}
+html[data-theme="dark"] .shell .attention .attention-icon.info{background:rgba(47,107,255,.2);color:#7fb0ff}
+html[data-theme="dark"] .shell .attention .attention-icon.purple{background:rgba(122,79,224,.22);color:#b79bff}
+html[data-theme="dark"] .shell .attention .row-ic{color:#8fa5c9}
+html[data-theme="dark"] .shell .attention>button:hover{background:rgba(47,107,255,.1)}
+html[data-theme="dark"] .shell .cd-legend li{color:#c4d4f0}
+html[data-theme="dark"] .shell .quick-grid button{background:#0f1c36;border-color:#22375f;color:#d6e4ff}
+html[data-theme="dark"] .shell .quick-grid button:hover{background:#142446}
+html[data-theme="dark"] .shell .user-menu,html[data-theme="dark"] .shell .pal,html[data-theme="dark"] .keys{background:#101d36;border-color:#22375f;color:#e6eefc}
+html[data-theme="dark"] .shell .user-menu button,html[data-theme="dark"] .shell .pal-i{color:#d6e4ff}
+html[data-theme="dark"] .shell .user-menu button:hover,html[data-theme="dark"] .shell .pal-i.sel{background:#16294f}
+html[data-theme="dark"] .shell .um-head strong,html[data-theme="dark"] .keys,html[data-theme="dark"] .keys .kr{color:#e6eefc}
+html[data-theme="dark"] .shell .pal-in,html[data-theme="dark"] .shell .pal-foot,html[data-theme="dark"] .shell .um-sep,html[data-theme="dark"] .keys .kr{border-color:#1f3157}
+html[data-theme="dark"] .shell .pal-in input{color:#f0f5ff}.shell .pal-foot{background:#f8fbff}
+html[data-theme="dark"] .shell .pal-foot{background:#0d182f}
+html[data-theme="dark"] .shell .page :where(h1,h2,h3,h4,td,th,label,b){color:#e6eefc}
+html[data-theme="dark"] .shell .page :where(p,small){color:#8fa5c9}
+html[data-theme="dark"] .shell table{color:#d6e4ff}
+html[data-theme="dark"] .shell table th{background:rgba(255,255,255,.04)!important;color:#8fa5c9!important}
+html[data-theme="dark"] .shell table td{border-color:#1f3157!important}
+html[data-theme="dark"] .shell .page :where(input,select,textarea){background:#0f1c36!important;color:#e6eefc!important;border-color:#25396a!important}
+html[data-theme="dark"] .shell .btn:not(.primary){background:#0f1c36!important;color:#d6e4ff!important;border-color:#25396a!important}
+html[data-theme="dark"] .shell .mini-row,html[data-theme="dark"] .shell .progress-row{border-color:#1f3157!important}
+html[data-theme="dark"] .shell .progress{background:#1b2b4a!important}
+
+/* ---------- responsivo y movimiento reducido ---------- */
+@media(max-width:1000px){
+  .shell .extra-grid{grid-template-columns:1fr!important}
+  .shell .cd-body{flex-direction:column;align-items:flex-start}
+  .shell .kpi .spark{display:none}
+  .shell .head-actions{flex-wrap:wrap}
+}
+@media(max-width:760px){
+  .shell .search span{display:block!important}
+  .shell .quick-grid{grid-template-columns:1fr}
+  .shell .user-menu{right:-6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .shell *,.shell *::before,.shell *::after{animation:none!important;transition:none!important}
+}
+
+/* el menú de usuario debe quedar por encima del contenido */
+.shell .main>.appbar{position:relative;z-index:30!important}
+.shell .main>.page{z-index:1}
+
+html[data-theme="dark"] .shell .kpi .kpi-cap .up{color:#34d399!important}
+.shell .cd-svg .cd-seg:hover{opacity:1}
+
+/* CIA ERP: venta con partidas, cobro y saldo */
+.sale-modal { width: min(760px, calc(100vw - 28px)); max-height: calc(100vh - 32px); overflow: auto; }
+.sale-modal > header p { margin: 5px 0 0; color: var(--muted, #64748b); font-size: .9rem; }
+.sale-lines-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:6px; }
+.sale-lines { display:grid; gap:10px; }
+.sale-line { display:grid; grid-template-columns:minmax(0,1fr) 110px auto; align-items:end; gap:10px; padding:12px; border:1px solid var(--border, #dbe3ef); border-radius:12px; background:var(--surface, #fff); }
+.sale-line label, .sale-payment-grid label { min-width:0; }
+.sale-line select, .sale-line input { width:100%; min-width:0; }
+.sale-qty { max-width:130px; }
+.sale-total-row { display:flex; justify-content:space-between; align-items:center; padding:16px 0 10px; border-bottom:1px solid var(--border, #dbe3ef); }
+.sale-total-row strong { font-size:1.35rem; }
+.sale-payment-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.sale-balance { display:flex; justify-content:space-between; margin:0; padding:10px 0; }
+.form-hint { color:var(--muted, #64748b); font-size:.82rem; margin:0; }
+.sale-modal .modal-form footer { position:sticky; bottom:0; background:var(--surface, #fff); padding-top:12px; }
+@media(max-width:600px) { .sale-line { grid-template-columns:minmax(0,1fr) 84px auto; padding:8px; gap:7px; } .sale-payment-grid { grid-template-columns:1fr; } .sale-modal { padding:16px; } }
+
+/* CIA ERP V3: inventario y movimientos legibles */
+.shell .inventory-kpis { margin: 0 0 18px; }
+.shell .inventory-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; align-items:stretch; }
+.shell .inv-card { min-width:0; padding:18px; overflow:hidden; }
+.shell .inv-top { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.shell .inv-top h3 { margin:0 0 5px; overflow-wrap:anywhere; }
+.shell .inv-top small { color:var(--muted,#64748b); }
+.shell .inv-numbers { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin:18px 0 14px; }
+.shell .inv-numbers>div { min-width:0; padding:10px 8px; border-radius:10px; background:var(--surface-soft,#f1f5f9); }
+.shell .inv-numbers small { display:block; color:var(--muted,#64748b); font-size:.72rem; margin-bottom:5px; }
+.shell .inv-numbers strong { display:block; font-size:1.12rem; overflow-wrap:anywhere; }
+.shell .inv-card .progress { overflow:hidden; height:7px; border-radius:20px; }
+.shell .inv-card .progress i { display:block; height:100%; border-radius:20px; background:var(--primary,#2563eb); }
+.shell .inv-foot { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:14px; }
+.shell .inv-foot span { flex:1 1 100%; font-size:.82rem; color:var(--muted,#64748b); }
+.shell .inventory-movements { margin-top:20px; }
+.shell .inventory-movements .card-head { padding:18px 20px 12px; }
+.shell .inventory-movements table { width:100%; }
+.shell .inventory-movements td,.shell .inventory-movements th { white-space:nowrap; }
+.shell .stock-modal { width:min(560px,calc(100vw - 28px)); max-height:calc(100vh - 32px); overflow:auto; }
+.shell .stock-modal header p { margin:5px 0 0; color:var(--muted,#64748b); font-size:.9rem; }
+.shell .empty-cell { text-align:center; color:var(--muted,#64748b); padding:24px!important; }
+@media(max-width:1120px) { .shell .inventory-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:700px) { .shell .inventory-cards { grid-template-columns:minmax(0,1fr); } .shell .inv-numbers { gap:6px; } .shell .inv-numbers>div { padding:8px 6px; } .shell .inv-numbers strong { font-size:1rem; } }

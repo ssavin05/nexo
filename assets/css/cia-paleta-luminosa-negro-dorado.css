@@ -1,0 +1,55 @@
+/* CIA — interfaz luminosa que armoniza con el logo negro y dorado */
+:root{--bg:#f5f8fd;--surface:#fff;--surface2:#f8faff;--text:#15233b;--muted:#62738d;--line:#e1e8f2;--nav:#0b1730;--nav2:#122344;--blue:#2868ed;--blue2:#174fc9;--teal:#168de2;--green:#159b78;--amber:#c69a2c;--cia-gold:#c99b2e;--shadow:0 14px 38px rgba(23,52,94,.09)}
+html,body,#app{background:#f5f8fd!important;color:#15233b!important}
+body{background-image:radial-gradient(ellipse at 8% 0%,rgba(45,112,240,.075),transparent 34%)!important}
+.landing{background:#fff!important;color:#15233b!important}
+.landing-nav{min-height:90px;border-bottom:1px solid #e8edf5}
+.brandmark{width:76px!important;height:76px!important;flex:0 0 76px!important;clip-path:none!important;border-radius:50%!important;background:#07142b url('../icons/cia-logo-oficial-dorado.png') center/contain no-repeat!important;color:transparent!important;font-size:0!important;box-shadow:0 6px 22px rgba(9,24,50,.15),0 0 0 1px rgba(201,155,46,.55)!important;overflow:hidden!important}
+.brandmark::before,.brandmark::after{content:none!important}
+.brand .brandmark+span,.side-brand .brandmark+span{color:#c99b2e!important;font-weight:750!important;letter-spacing:.035em}
+.landing-nav nav{align-items:center}
+.hero{padding-top:64px!important;padding-bottom:76px!important;gap:56px!important;align-items:center!important}
+.hero h1{color:#14233d!important}
+.hero h1 em,.eyebrow,.eyebrow.dark{color:#2868ed!important}
+.hero-copy>p{color:#61738e!important}
+.hero-proof{color:#667993!important}
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon,.nx-v33-next,.auth-main .btn,.auth-side .btn{background:linear-gradient(135deg,#347bf7,#205be0)!important;color:#fff!important;border:1px solid #c99b2e!important;box-shadow:0 8px 22px rgba(40,104,237,.18)!important}
+.btn.primary:hover,.auth-main .btn:hover,.auth-side .btn:hover{background:#174fc9!important}
+.btn.secondary{background:#fff!important;color:#1c3765!important;border:1px solid #d8e2f0!important}
+.btn.secondary:hover{border-color:#c99b2e!important;background:#fffaf0!important}
+.hero-product{background:linear-gradient(145deg,#0c1b34,#132846)!important;color:#f7faff!important;border:1px solid rgba(201,155,46,.68)!important;box-shadow:0 24px 58px rgba(18,42,78,.17)!important;transform:none!important}
+.mock-kpis>div{background:#192d4b!important;border-color:#2b4262!important}
+.mock-chart{background:#132744!important;border-color:#2b4568!important}
+.mock-chart>span{background:linear-gradient(180deg,#69c9ff,#2868ed)!important}
+.mock-row{background:#1a2d49!important}
+.mock-kpis small,.mock-top,.mock-row span{color:#b5c7df!important}
+.mock-kpis b{color:#62d7b0!important}
+.landing-features{background:#f0f5fc!important}
+.feature-grid article,.card,.panel,.modal,.module-card,.settings-card,.role-card,.plan-card,.stat-card,.nx-v33-level-card{background:#fff!important;color:#15233b!important;border-color:#e1e8f2!important;box-shadow:0 8px 24px rgba(23,52,94,.055)!important}
+.feature-grid article>span{color:#2868ed!important}
+.auth{background:#f5f8fd!important}
+.auth-side{background:linear-gradient(145deg,#09152d,#152b4b)!important;color:#fff!important;border-color:#c99b2e!important}
+.auth-side p{color:#d0dced!important}
+.auth-main{background:#f5f8fd!important}
+.auth-card,.login-panel,.register-panel{background:#fff!important;color:#15233b!important;border:1px solid #e1e8f2!important;box-shadow:0 18px 48px rgba(23,52,94,.10)!important}
+.sidebar,.appbar{background:#0b1730!important;color:#f5f8ff!important;border-color:rgba(201,155,46,.32)!important}
+.appbar{background:#fff!important;color:#15233b!important;border-bottom:1px solid #e1e8f2!important}
+.sidebar .side-brand{color:#fff!important}
+.nav-item{color:#c1cee1!important}.nav-item i{color:#d1ad54!important}
+.nav-item:hover,.nav-item.active,.sidebar .active{background:#1c4e9e!important;color:#fff!important;border-color:#c99b2e!important}
+.company-switch{background:#122344!important;border-color:#2b4262!important}
+input,select,textarea,.field,input[type=email],input[type=password],.form input,.modal-form input,.modal-form select,.settings-card input{background:#fff!important;color:#15233b!important;border-color:#d7e1ee!important}
+input::placeholder,textarea::placeholder{color:#8493a8!important}
+input:focus,select:focus,textarea:focus,.form input:focus,.modal-form input:focus,.settings-card input:focus{border-color:#2868ed!important;box-shadow:0 0 0 3px rgba(40,104,237,.12)!important}
+.page{color:#15233b!important}.page-head p{color:#667993!important}
+.card:hover,.module-card:hover,.settings-card:hover,.role-card:hover,.plan-card:hover,.nx-v33-level-card:hover{border-color:rgba(201,155,46,.85)!important}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:linear-gradient(145deg,#f8fbff,#edf4ff)!important;color:#15233b!important}
+.nx-v33-level-card{background:#fff!important;color:#15233b!important;border-color:#e1e8f2!important}
+.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#c99b2e!important;box-shadow:0 0 0 1px rgba(201,155,46,.5),0 12px 28px rgba(23,52,94,.10)!important}
+.nx-v33-loader i,.progress-fill,.progress-bar>span,.step.active,.step-indicator.active{background:#2868ed!important;border-color:#c99b2e!important}
+.badge,.tag{background:#edf4ff!important;color:#2457b5!important;border-color:#d7e4fa!important}
+.nx-answer-grid button:before,.nx-business-grid button:before,.nx-product-grid button:before{background:#c99b2e!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #c99b2e!important;outline-offset:2px}
+[class*="rainbow"],[class*="gradient"].rainbow{background-image:none!important}
+@media(max-width:760px){.brandmark{width:60px!important;height:60px!important;flex-basis:60px!important}.hero{padding-top:42px!important;gap:34px!important}.landing-nav{min-height:78px}.hero-product{max-width:100%}}
+@media(max-width:560px){.brandmark{width:52px!important;height:52px!important;flex-basis:52px!important}.hero h1{font-size:40px!important}.hero{padding-bottom:48px!important}.hero-product{padding:15px!important}.mock-chart{gap:7px;padding-left:10px;padding-right:10px}}

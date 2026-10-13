@@ -1,0 +1,31 @@
+/* CIA — azul original de Nexo + dorado del logo oficial. Paleta limpia y coherente. */
+:root{--bg:#071426;--surface:#0b1c33;--surface2:#102844;--text:#edf5ff;--muted:#a9bed8;--line:#1e4268;--nav:#061226;--nav2:#0a1c33;--blue:#2f6df6;--blue2:#1f57d6;--teal:#2f6df6;--green:#27b99a;--amber:#d4af37;--cia-gold:#d4af37;--shadow:0 14px 34px rgba(0,0,0,.24)}
+html,body,#app{background:var(--bg)!important;color:var(--text)!important}
+body{background-image:radial-gradient(ellipse at 12% 0%,rgba(47,109,246,.10),transparent 38%)!important}
+/* Logo oficial dorado: no recrearlo como rombo de color. */
+.brandmark{width:46px!important;height:46px!important;flex:0 0 46px!important;clip-path:none!important;border-radius:50%!important;background:#061226 url('../icons/cia-logo-oficial-dorado.png') center/contain no-repeat!important;color:transparent!important;font-size:0!important;box-shadow:0 0 0 1px rgba(212,175,55,.5),0 5px 18px rgba(0,0,0,.28)!important;overflow:hidden!important}
+.brandmark::before,.brandmark::after{content:none!important}
+.brand .brandmark+span,.side-brand .brandmark+span{color:#f0c75e!important;font-weight:650!important;letter-spacing:.02em}
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon,.nx-v33-next,.auth-main .btn,.auth-side .btn{background:linear-gradient(135deg,#2f6df6,#1f57d6)!important;color:#fff!important;border:1px solid rgba(212,175,55,.78)!important;box-shadow:0 7px 20px rgba(31,87,214,.22)!important}
+.btn.primary:hover,.auth-main .btn:hover,.auth-side .btn:hover{background:#1f57d6!important;box-shadow:0 0 0 2px rgba(212,175,55,.16),0 8px 24px rgba(31,87,214,.3)!important}
+.btn.secondary{background:#0b1c33!important;color:#dbeaff!important;border:1px solid #28517b!important}
+.link,.demo-link,.periods button.active,.eyebrow,.hero h1 em{color:#78baff!important}
+.auth-side{background:linear-gradient(145deg,#061226 0%,#0b2443 72%,#0a1b31 100%)!important;color:#f4f8ff!important;border-color:rgba(212,175,55,.6)!important}
+.auth-main,.auth-card,.login-panel,.register-panel{background:#09182b!important;color:#edf5ff!important;border-color:#1d4269!important}
+.sidebar,.appbar{background:#061226!important;color:#edf5ff!important;border-color:rgba(212,175,55,.24)!important}
+.nav-item{color:#d4e1f2!important}.nav-item i{color:#d4af37!important}
+.nav-item:hover,.nav-item.active,.sidebar .active{background:#123a70!important;color:#fff!important;border-color:rgba(212,175,55,.8)!important}
+input,select,textarea,.field,input[type=email],input[type=password],.form input,.modal-form input,.modal-form select,.settings-card input{background:#07182d!important;color:#edf5ff!important;border-color:#21476d!important}
+input::placeholder,textarea::placeholder{color:#8fa9c7!important}
+input:focus,select:focus,textarea:focus,.form input:focus,.modal-form input:focus,.settings-card input:focus{border-color:#2f6df6!important;box-shadow:0 0 0 3px rgba(47,109,246,.16)!important}
+.card,.panel,.modal,.module-card,.feature-grid article,.settings-card,.role-card,.plan-card,.stat-card,.nx-v33-level-card{background:#0a1b30!important;color:#edf5ff!important;border-color:#1b426a!important;box-shadow:0 8px 24px rgba(0,0,0,.12)!important}
+.card:hover,.module-card:hover,.settings-card:hover,.role-card:hover,.plan-card:hover,.nx-v33-level-card:hover{border-color:rgba(212,175,55,.85)!important}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:radial-gradient(ellipse at 50% 0%,rgba(47,109,246,.12),transparent 55%),#071426!important;color:#edf5ff!important}
+.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#d4af37!important;box-shadow:0 0 0 1px rgba(212,175,55,.5),0 12px 28px rgba(0,0,0,.24)!important}
+.nx-v33-loader i,.progress-fill,.progress-bar>span,.step.active,.step-indicator.active{background:#2f6df6!important;border-color:#d4af37!important}
+.badge,.tag{background:#102b4c!important;color:#a9d4ff!important;border-color:#28517b!important}
+.nx-answer-grid button:before,.nx-business-grid button:before,.nx-product-grid button:before{background:#d4af37!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d4af37!important;outline-offset:2px}
+/* Sin arcoíris: se eliminan fondos multicolor heredados, conservando el azul y el oro. */
+[class*="rainbow"],[class*="gradient"]{background-image:none}
+@media(max-width:760px){.brandmark{width:38px!important;height:38px!important;flex-basis:38px!important}}

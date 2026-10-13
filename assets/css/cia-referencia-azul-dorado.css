@@ -1,0 +1,33 @@
+/* CIA — estilo basado en las referencias: panel Nexo azul oscuro, bienvenida luminosa. */
+:root{--cia-blue:#2f6df6;--cia-blue-deep:#1f57d6;--cia-gold:#d4af37}
+/* Bienvenida: blanco azulado con halos lavanda y celeste difuminados. */
+.nx-v33-overlay{
+ background:radial-gradient(ellipse at 12% 22%,rgba(151,137,255,.27),transparent 34%),radial-gradient(ellipse at 88% 72%,rgba(90,220,239,.24),transparent 32%),linear-gradient(135deg,#f8faff 0%,#eef4ff 54%,#f6f9ff 100%)!important;
+ color:#111c35!important;
+}
+.nx-v33-overlay::before,.nx-v33-overlay::after{content:"";position:absolute;pointer-events:none;border-radius:50%;filter:blur(42px);opacity:.55;z-index:0}
+.nx-v33-overlay::before{width:34vw;height:34vw;left:-12vw;top:-12vw;background:rgba(155,143,255,.22);animation:ciaWelcomeGlowA 23s ease-in-out infinite alternate}
+.nx-v33-overlay::after{width:38vw;height:38vw;right:-14vw;bottom:-15vw;background:rgba(73,220,239,.2);animation:ciaWelcomeGlowB 28s ease-in-out infinite alternate}
+.nx-v33-splash,.nx-v33-choice-wrap{position:relative;z-index:1}
+/* Rombo azul limpio como el de la referencia, sin caja redondeada ni letras dentro. */
+.nx-v33-mark{width:76px!important;height:76px!important;border-radius:0!important;transform:rotate(45deg);margin:0 auto 38px!important;background:linear-gradient(135deg,#3478ff,#2058dc)!important;color:transparent!important;font-size:0!important;box-shadow:0 12px 28px rgba(47,109,246,.15)!important;border:0!important;position:relative}
+.nx-v33-mark::after{content:"";position:absolute;inset:0;background:inherit;opacity:.16;animation:ciaDiamondPulse 5.5s ease-in-out infinite alternate}
+.nx-v33-mark.small{width:38px!important;height:38px!important;margin:0!important;border-radius:0!important}
+.nx-v33-kicker{color:#d7b14a!important;letter-spacing:.18em!important}
+.nx-v33-splash h1{color:#111c35!important}
+.nx-v33-splash p{color:#657491!important}
+.nx-v33-loader{background:#dce5f5!important;height:5px!important}
+.nx-v33-loader i{background:linear-gradient(90deg,#2f6df6,#58bff2)!important}
+.nx-v33-level{border-color:#dfe7f5!important;box-shadow:0 12px 34px rgba(35,65,115,.055)!important}
+.nx-v33-level:hover{border-color:#7ca6ff!important;box-shadow:0 18px 42px rgba(35,65,115,.11)!important}
+.nx-v33-level.featured{border-color:#2f6df6!important}
+.nx-v33-level-icon{background:linear-gradient(135deg,#2f6df6,#1f57d6)!important;color:#fff!important;border-radius:14px!important}
+.nx-v33-level-meta,.nx-v33-level b{color:#2f6df6!important}
+.nx-v33-recommended{color:#245ac7!important;background:#e9f0ff!important}
+@keyframes ciaWelcomeGlowA{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(5vw,3vh,0) scale(1.08)}}
+@keyframes ciaWelcomeGlowB{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-4vw,-3vh,0) scale(1.06)}}
+@keyframes ciaDiamondPulse{from{opacity:.04;transform:scale(.88)}to{opacity:.2;transform:scale(1.08)}}
+/* Acentos de oro limitados a detalles; el azul de Nexo sigue siendo protagonista. */
+.btn.primary,.nx-v33-next{background:linear-gradient(135deg,#3478ff,#1f57d6)!important;border:1px solid rgba(212,175,55,.68)!important;color:#fff!important}
+@media(prefers-reduced-motion:reduce){.nx-v33-overlay::before,.nx-v33-overlay::after,.nx-v33-mark::after{animation:none!important}}
+@media(max-width:600px){.nx-v33-mark{width:58px!important;height:58px!important;margin-bottom:30px!important}.nx-v33-mark.small{width:34px!important;height:34px!important}}

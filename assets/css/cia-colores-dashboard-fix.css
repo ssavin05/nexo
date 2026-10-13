@@ -1,0 +1,100 @@
+/* CIA — corrección de contraste y armonía de color en el panel */
+:root {
+  --bg:#f4f7fc;
+  --surface:#ffffff;
+  --surface2:#edf3fb;
+  --text:#142541;
+  --muted:#60738f;
+  --line:#dce6f3;
+  --nav:#0b1730;
+  --nav2:#122344;
+  --blue:#2868ed;
+  --blue2:#174fc9;
+  --cia-gold:#c99b2e;
+}
+/* Fondo general luminoso; navegación oscura para enmarcar la marca */
+html,body,#app,.workspace,.main-content,.content-area,.page-content {
+  background:#f4f7fc!important;
+  color:#142541!important;
+}
+.sidebar,.side-nav,.app-sidebar {
+  background:#0b1730!important;
+  color:#f4f7ff!important;
+  border-color:rgba(201,155,46,.3)!important;
+}
+.sidebar .brandmark,.side-brand .brandmark {
+  filter:drop-shadow(0 3px 8px rgba(0,0,0,.18));
+}
+.appbar,.topbar,.workspace-header {
+  background:#fff!important;
+  color:#142541!important;
+  border-color:#dce6f3!important;
+}
+/* Evita las tarjetas casi negras con texto azul oscuro de bajo contraste */
+.kpi-grid>.stat,.kpi-grid>.kpi,.kpi-grid>.card,.kpi-grid>div,
+.kpi,.kpi-card,.metric-card,.dashboard-kpi,.stat-card {
+  background:linear-gradient(145deg,#fff 0%,#f1f6ff 100%)!important;
+  color:#142541!important;
+  border:1px solid #dce6f3!important;
+  border-top:3px solid #2868ed!important;
+  box-shadow:0 8px 22px rgba(28,64,120,.07)!important;
+}
+.kpi-grid strong,.kpi-grid b,.kpi strong,.kpi-card strong,.metric-card strong,
+.stat-card strong,.kpi-grid .value,.kpi .value {
+  color:#17345f!important;
+}
+.kpi-grid small,.kpi small,.kpi-card small,.metric-card small,.stat-card small,
+.kpi-grid p,.kpi p {
+  color:#617590!important;
+}
+.kpi-grid .warn,.kpi .warn,.kpi-card .warn,.metric-card .warn {
+  color:#a87810!important;
+}
+.kpi-grid .good,.kpi .good {color:#138466!important}
+/* Superficies de contenido claras y limpias */
+.card,.panel,.module-card,.chart-card,.attention,.detail-body>section,
+.table-wrap,.table-container,.settings-card,.modal,.stat-card {
+  background:#fff!important;
+  color:#142541!important;
+  border-color:#dce6f3!important;
+  box-shadow:0 7px 22px rgba(28,64,120,.045)!important;
+}
+.card h2,.card h3,.panel h2,.panel h3,.chart-card h3,.attention h3,
+.page-title,.section-title {color:#142541!important}
+.card p,.panel p,.chart-card p,.attention p,.card small {color:#60738f!important}
+.card-head,.page-header {border-color:#e3eaf4!important}
+/* Azul Nexo para la acción principal; dorado solo como acento */
+.btn.primary,.btn-primary,button.primary,.create-button,.topbar .btn.primary {
+  background:linear-gradient(135deg,#347bf7,#205be0)!important;
+  color:#fff!important;
+  border:1px solid #c99b2e!important;
+  box-shadow:0 7px 18px rgba(40,104,237,.16)!important;
+}
+.nav-item.active,.nav-item:hover,.sidebar .active {
+  background:#1c4e9e!important;
+  color:#fff!important;
+  border-color:#c99b2e!important;
+}
+.badge,.tag,.pill {
+  background:#eaf1ff!important;
+  color:#245bc2!important;
+  border-color:#d5e3ff!important;
+}
+input,select,textarea {
+  background:#fff!important;
+  color:#142541!important;
+  border-color:#d5e0ef!important;
+}
+input::placeholder,textarea::placeholder {color:#8494aa!important}
+.line-chart,.chart-area {
+  background:linear-gradient(180deg,#f9fbff,#edf4ff)!important;
+  border-color:#e0e9f5!important;
+}
+.attention button,.table button {color:#142541!important}
+.attention button:hover {background:#f4f8ff!important}
+@media(max-width:900px) {
+  .kpi-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:560px) {
+  .kpi-grid {grid-template-columns:1fr!important}
+}

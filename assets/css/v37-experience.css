@@ -1,0 +1,6 @@
+/* V37: transiciones suaves y estados accesibles sin parpadeo de pantalla */
+.nx-answer-grid button,.nx-business-grid button{transition:background-color .14s ease,border-color .14s ease,box-shadow .14s ease,transform .14s ease}
+.nx-answer-grid button[aria-pressed="true"],.nx-business-grid button[aria-pressed="true"]{box-shadow:0 0 0 2px rgba(99,91,231,.12);border-color:#756cf0}
+.nx-main{transition:opacity .14s ease,transform .14s ease}
+.nx-main.nx-question-leaving{opacity:.78;transform:translateY(2px)}
+.nx-answer-grid button:focus-visible,.nx-business-grid button:focus-visible{outline:3px solid rgba(79,140,255,.45);outline-offset:2px}

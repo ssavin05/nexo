@@ -1,0 +1,31 @@
+/* CIA — Entradas y creación en azul hielo; estructura negra y remates dorados. */
+:root{
+ --bg:#050608; --surface:#0a0b0e; --surface2:#101217; --text:#f5f3ec; --muted:#b9bdc5;
+ --line:#292b30; --nav:#07080a; --nav2:#0d0f13; --blue:#70dcff; --blue2:#39bfe9;
+ --teal:#70dcff; --green:#70dcff; --amber:#d4af37; --red:#70dcff;
+ --cia-red:#70dcff; --cia-red-dark:#2699c6; --cia-pink:#0b1015; --cia-pink-soft:#080b0f; --cia-gold:#d4af37;
+}
+html,body,#app{background:#050608;color:#f5f3ec}
+/* Login, registro, bienvenida y flujo de creación: azul hielo como color de acción */
+.auth-side,.auth-main,.auth-card,.login-panel,.register-panel{background:#080b10!important}
+.auth-side{background:linear-gradient(145deg,#07090d 0%,#0b1820 100%)!important;border-color:#d4af37!important}
+.auth-main{background:#080a0d!important}
+.btn.primary,.nx-v33-mark,.nx-v33-level-icon,.nx-v33-next,.auth-main .btn,.auth-side .btn{background:#70dcff!important;color:#061016!important;border-color:#d4af37!important;box-shadow:0 0 0 1px rgba(212,175,55,.45),0 5px 18px rgba(112,220,255,.12)!important}
+.btn.primary:hover,.auth-main .btn:hover{background:#a0eaff!important}
+.btn.secondary{background:#0b0d11!important;color:#70dcff!important;border:1px solid #d4af37!important}
+.link,.demo-link,.periods button.active{color:#70dcff!important}
+.eyebrow,.hero h1 em,.feature-grid article>span,.nav-item.active i{color:#d4af37!important}
+.sidebar,.appbar{background:#07080a!important;border-color:#4b3d19!important}
+.nav-item:hover,.nav-item.active{background:#101820!important;color:#70dcff!important;border-color:#d4af37!important}
+.nav-item b,.icon-btn.dot:after{background:#70dcff!important;color:#061016!important}
+.avatar{background:#0c151b!important;color:#d4af37!important;border:1px solid #d4af37!important}
+.mock-chart>span{background:#70dcff!important}
+.nx-v33-splash,.nx-v33-levels,.nx-v33-overlay{background:#07090d!important;border-color:#d4af37!important}
+.nx-v33-loader i{background:#70dcff!important;box-shadow:0 0 8px rgba(112,220,255,.3)!important}
+.nx-v33-level-card:hover,.nx-v33-level-card.is-active,.nx-v33-level-card.active{border-color:#70dcff!important;box-shadow:0 0 0 1px #d4af37,0 12px 28px rgba(0,0,0,.4)!important}
+.form input:focus,.modal-form input:focus,.settings-card input:focus,input:focus,select:focus,textarea:focus{border-color:#70dcff!important;box-shadow:0 0 0 2px rgba(112,220,255,.14),0 0 0 3px rgba(212,175,55,.18)!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d4af37!important;outline-offset:2px}
+/* Tarjetas y superficies permanecen negras; el dorado se reserva para contornos y remates. */
+.card,.panel,.modal,.settings-card,.feature-grid article,.stat-card{background:#090a0d!important;border-color:#40351b!important}
+button,a,.diamond,.nx-v33-level-card{transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease}
+[class*="gradient"],.gradient,.rainbow{background-image:none!important}

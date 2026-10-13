@@ -1,0 +1,151 @@
+/* V33: splash y selector de personalización en pantallas completas */
+.nx-v33-overlay{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;overflow:auto;padding:24px;box-sizing:border-box;background:radial-gradient(circle at 15% 15%,rgba(107,114,255,.15),transparent 32%),radial-gradient(circle at 85% 85%,rgba(20,184,166,.13),transparent 35%),linear-gradient(135deg,#f8faff,#edf2ff 58%,#f5f0ff);color:#111a30;opacity:1;animation:nxV33FadeIn .35s ease both}
+.nx-v33-splash{text-align:center;max-width:700px;width:100%;animation:nxV33Rise .5s ease both}
+.nx-v33-mark{width:76px;height:76px;border-radius:24px;margin:0 auto 28px;display:grid;place-items:center;color:#fff;font-size:39px;font-weight:850;background:linear-gradient(135deg,#6257e8,#08b6ce);box-shadow:0 15px 40px #6557e844}
+.nx-v33-kicker{font-size:11px;letter-spacing:.18em;font-weight:800;color:#6257e8}
+.nx-v33-splash h1{font-size:clamp(34px,6vw,62px);letter-spacing:-.045em;line-height:1.05;margin:18px 0 12px;color:#111a30}
+.nx-v33-splash p{font-size:clamp(16px,2vw,21px);color:#63708a;line-height:1.6;margin:0 auto;max-width:620px}
+.nx-v33-loader{width:170px;height:4px;border-radius:9px;background:#dfe5f7;overflow:hidden;margin:32px auto 0}
+.nx-v33-loader i{display:block;width:38%;height:100%;border-radius:9px;background:linear-gradient(90deg,#6657e8,#06b6d4);animation:nxV33Load 1.1s ease-in-out infinite}
+.nx-v33-overlay.message .nx-v33-splash{animation:nxV33Rise .5s ease both}
+.nx-v33-choice-wrap{width:min(1080px,100%);margin:auto;animation:nxV33Rise .45s ease both}
+.nx-v33-brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:850;margin-bottom:38px}
+.nx-v33-mark.small{width:38px;height:38px;border-radius:13px;font-size:21px;margin:0;box-shadow:none}
+.nx-v33-choice-wrap h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;line-height:1.1;margin:12px 0;color:#121a30}
+.nx-v33-lead{max-width:760px;font-size:16px;line-height:1.7;color:#66728a;margin:0 0 28px}
+.nx-v33-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.nx-v33-level{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;min-height:300px;padding:24px;border:1px solid #dce3f3;border-radius:22px;background:rgba(255,255,255,.88);color:#18233c;box-shadow:0 12px 34px rgba(39,53,93,.06);cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;font:inherit}
+.nx-v33-level:hover{transform:translateY(-4px);border-color:#8d8af7;box-shadow:0 18px 42px rgba(39,53,93,.12)}
+.nx-v33-level.featured{border:2px solid #7770ef;background:linear-gradient(160deg,#fff,#f5f4ff)}
+.nx-v33-level-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#efedff;color:#5c55df;font-size:24px}
+.nx-v33-level-title{font-size:23px;font-weight:800;letter-spacing:-.025em}
+.nx-v33-level-desc{font-size:14px;line-height:1.6;color:#65718a}
+.nx-v33-level-meta{font-size:12px;color:#6257d9;font-weight:750}
+.nx-v33-level b{margin-top:auto;color:#4f46e5;font-size:14px}
+.nx-v33-recommended{position:absolute;top:15px;right:15px;font-size:9px;font-weight:850;letter-spacing:.1em;color:#5d54d9;background:#e9e7ff;padding:6px 8px;border-radius:999px}
+.nx-v33-cancel{display:block;margin:22px auto 0;border:0;background:transparent;color:#6b7280;font:inherit;font-size:14px;cursor:pointer;padding:10px}
+.nx-v33-overlay~#app .nx-preview{display:none!important}
+body:has(.nx-v33-overlay){overflow:hidden}
+.nx-split .nx-preview{display:none!important}
+.nx-split .nx-workspace{display:block!important;height:calc(100dvh - 70px)!important;overflow-y:auto!important}
+.nx-split .nx-main{height:100%!important;max-width:900px!important;width:100%!important;margin:0 auto!important;overflow:visible!important;padding:clamp(20px,4vw,46px)!important;box-sizing:border-box}
+.nx-split .nx-top{display:flex;justify-content:space-between;align-items:center;padding:16px 24px!important;background:#fff;border-bottom:1px solid #e5eaf3}
+.nx-split .nx-bar{flex:1;max-width:380px;margin:0 28px}
+.nx-split .nx-setup-hero{min-height:auto}
+.nx-final-plan h1{font-size:clamp(30px,4vw,42px);margin:8px 0}
+.nx-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}
+.nx-plan-card{position:relative;text-align:left;padding:22px;border-radius:20px;border:1px solid #dfe5f2;background:#fff;color:#17213a;display:flex;flex-direction:column;gap:12px;cursor:pointer;font:inherit;min-width:0}
+.nx-plan-card.on{border:2px solid #6657e8;background:#f8f7ff;box-shadow:0 0 0 3px #6657e81a}
+.nx-plan-tag{font-size:9px;font-weight:850;letter-spacing:.1em;color:#6557e8}
+.nx-plan-card h2{font-size:23px;margin:0}
+.nx-plan-price{font-size:22px}
+.nx-plan-card p,.nx-plan-card li{font-size:13px;line-height:1.5;color:#66728a}
+.nx-plan-card ul{padding-left:18px}
+.nx-plan-select{margin-top:auto;border-radius:10px;padding:10px;text-align:center;background:#f0f1ff;color:#5146d8;font-weight:750;font-size:13px}
+@keyframes nxV33Load{0%{transform:translateX(-130%)}100%{transform:translateX(370%)}}
+@keyframes nxV33FadeIn{from{opacity:0}to{opacity:1}}
+@keyframes nxV33Rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.nx-v33-overlay{padding:18px}.nx-v33-levels,.nx-plan-grid{grid-template-columns:1fr}.nx-v33-level{min-height:auto;padding:20px}.nx-v33-brand{margin-bottom:24px}.nx-v33-recommended{position:static;margin-left:auto;order:-1}.nx-split .nx-bar{display:none}.nx-split .nx-workspace{height:calc(100dvh - 62px)!important}.nx-split .nx-main{padding:22px 17px 36px!important}.nx-plan-card{padding:19px}}
+
+.nx-plan-account{padding:20px;border:1px solid #e1e6f3;border-radius:18px;background:#fff;margin:22px 0}
+.nx-plan-account h3{margin:0 0 6px;color:#17213a}
+.nx-plan-account .nx-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.nx-plan-account input{box-sizing:border-box;width:100%;min-width:0;border:1px solid #dbe2f0;border-radius:11px;padding:12px;font:inherit}
+@media(max-width:760px){.nx-plan-account .nx-form{grid-template-columns:1fr}}
+
+.nx-plan-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.nx-v33-overlay.message #nx-v33-title{display:none}
+.nx-v33-overlay.message #nx-v33-sub{font-size:clamp(22px,4vw,36px);font-weight:800;letter-spacing:-.035em;color:#18233c;max-width:760px}
+@media(max-width:900px){.nx-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.nx-plan-grid{grid-template-columns:1fr}}
+
+/* V38 — bienvenida viva: gradientes animados, partículas y movimiento sutil */
+.nx-v33-overlay{isolation:isolate;background:linear-gradient(125deg,#f8faff 0%,#edf0ff 35%,#e7fbff 68%,#f8f1ff 100%);background-size:240% 240%;animation:nxV38Bg 12s ease infinite,nxV33FadeIn .45s ease both}
+.nx-v33-overlay::before,.nx-v33-overlay::after{content:"";position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(2px);opacity:.6}
+.nx-v33-overlay::before{width:min(46vw,540px);height:min(46vw,540px);left:-10%;top:-18%;background:radial-gradient(circle at 35% 35%,#b8b5ff 0%,rgba(125,111,255,.26) 38%,transparent 70%);animation:nxV38FloatA 9s ease-in-out infinite alternate}
+.nx-v33-overlay::after{width:min(42vw,480px);height:min(42vw,480px);right:-8%;bottom:-20%;background:radial-gradient(circle at 45% 45%,#8ce9f1 0%,rgba(18,190,207,.19) 40%,transparent 72%);animation:nxV38FloatB 11s ease-in-out infinite alternate}
+.nx-v33-splash{position:relative;animation:nxV38Entrance .9s cubic-bezier(.2,.8,.2,1) both}
+.nx-v33-mark{position:relative;isolation:isolate;animation:nxV38LogoFloat 3.4s ease-in-out infinite;box-shadow:0 18px 50px #6557e855,0 0 0 10px rgba(101,87,232,.06)}
+.nx-v33-mark::before{content:"";position:absolute;inset:-8px;border-radius:30px;border:1px solid rgba(101,87,232,.28);animation:nxV38Ring 2.6s ease-out infinite}
+.nx-v33-mark::after{content:"✦";position:absolute;right:-17px;top:-15px;color:#0eb9ce;font-size:23px;text-shadow:0 4px 18px #0eb9ce66;animation:nxV38Sparkle 2.1s ease-in-out infinite}
+.nx-v33-kicker{animation:nxV38Reveal .8s .12s both}
+.nx-v33-splash h1{animation:nxV38Reveal .85s .24s both}
+.nx-v33-splash p{animation:nxV38Reveal .85s .38s both}
+.nx-v33-loader{height:5px;background:rgba(117,128,170,.18);box-shadow:0 0 0 5px rgba(255,255,255,.35);animation:nxV38Reveal .7s .5s both}
+.nx-v33-loader i{width:32%;background:linear-gradient(90deg,#6257e8,#a855f7,#06b6d4,#6257e8);background-size:220% 100%;box-shadow:0 0 16px #4f8cff99;animation:nxV33Load 1.25s cubic-bezier(.45,0,.55,1) infinite,nxV38Shimmer 2.4s linear infinite}
+.nx-v33-overlay.message .nx-v33-splash{animation:nxV38MessageIn .8s cubic-bezier(.2,.8,.2,1) both}
+.nx-v33-overlay.message .nx-v33-mark{animation:nxV38LogoFloat 3.4s ease-in-out infinite,nxV38LogoGlow 1.7s ease-in-out infinite alternate}
+.nx-v33-choice-wrap{animation:nxV38ChoiceIn .7s cubic-bezier(.2,.8,.2,1) both}
+.nx-v33-brand .nx-v33-mark{animation:nxV38LogoFloat 3.4s ease-in-out infinite}
+.nx-v33-level{transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,background .25s;animation:nxV38CardIn .55s both}
+.nx-v33-level:nth-child(2){animation-delay:.09s}.nx-v33-level:nth-child(3){animation-delay:.18s}
+.nx-v33-level:hover{transform:translateY(-7px) scale(1.012)}
+.nx-v33-level:active{transform:translateY(-1px) scale(.99)}
+.nx-v33-level-icon{transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.nx-v33-level:hover .nx-v33-level-icon{transform:rotate(-7deg) scale(1.1);background:#e5e2ff}
+.nx-v33-level.featured{box-shadow:0 16px 40px rgba(101,87,232,.13)}
+@keyframes nxV38Bg{0%,100%{background-position:0% 45%}50%{background-position:100% 55%}}
+@keyframes nxV38FloatA{from{transform:translate3d(0,0,0) scale(.95)}to{transform:translate3d(9vw,7vh,0) scale(1.12)}}
+@keyframes nxV38FloatB{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-8vw,-7vh,0) scale(1.13)}}
+@keyframes nxV38Entrance{from{opacity:0;transform:translateY(24px) scale(.97);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes nxV38Reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nxV38LogoFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes nxV38Ring{0%{transform:scale(.88);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+@keyframes nxV38Sparkle{0%,100%{transform:scale(.75) rotate(0);opacity:.6}50%{transform:scale(1.2) rotate(25deg);opacity:1}}
+@keyframes nxV38Shimmer{from{background-position:0% 50%}to{background-position:220% 50%}}
+@keyframes nxV38MessageIn{from{opacity:0;transform:translateY(14px) scale(.985);filter:blur(4px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes nxV38LogoGlow{from{box-shadow:0 18px 50px #6557e855,0 0 0 10px rgba(101,87,232,.06)}to{box-shadow:0 18px 58px #6557e877,0 0 0 17px rgba(101,87,232,.025)}}
+@keyframes nxV38ChoiceIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nxV38CardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.nx-v33-overlay,.nx-v33-overlay::before,.nx-v33-overlay::after,.nx-v33-splash,.nx-v33-mark,.nx-v33-mark::before,.nx-v33-mark::after,.nx-v33-kicker,.nx-v33-splash h1,.nx-v33-splash p,.nx-v33-loader,.nx-v33-loader i,.nx-v33-choice-wrap,.nx-v33-level{animation:none!important;transition:none!important}}
+
+
+/* V40 — corrige el encuadre del asistente de creación y evita paneles internos estrechos */
+#nx-v33-flow.nx-v33-overlay{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;margin:0!important;padding:clamp(18px,3.2vw,48px)!important;overflow-y:auto!important;overflow-x:hidden!important;box-sizing:border-box!important;display:grid!important;place-items:center!important;z-index:2147483000!important;color:#111a30!important}
+#nx-v33-flow .nx-v33-choice-wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin:auto!important;box-sizing:border-box!important}
+#nx-v33-flow .nx-v33-brand,#nx-v33-flow .nx-v33-choice-wrap h1,#nx-v33-flow .nx-v33-kicker{opacity:1!important;visibility:visible!important}
+#nx-v33-flow .nx-v33-choice-wrap h1{color:#111a30!important;font-size:clamp(30px,4vw,46px)!important;line-height:1.12!important;margin:14px 0!important}
+#nx-v33-flow .nx-v33-lead{color:#52627d!important;opacity:1!important;max-width:780px!important;font-size:clamp(15px,1.5vw,18px)!important;line-height:1.65!important}
+#nx-v33-flow .nx-v33-levels{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;width:100%!important}
+#nx-v33-flow .nx-v33-level{min-width:0!important;min-height:260px!important;box-sizing:border-box!important;opacity:1!important;color:#18233c!important}
+#nx-v33-flow .nx-v33-level-desc{color:#52627d!important;opacity:1!important}
+#nx-v33-flow .nx-v33-splash h1{display:block!important;color:#111a30!important}
+#nx-v33-flow.message #nx-v33-title{display:block!important;color:#111a30!important;font-size:clamp(27px,4.5vw,52px)!important;line-height:1.12!important;max-width:850px!important;margin:18px auto 12px!important}
+#nx-v33-flow.message #nx-v33-sub{font-size:clamp(16px,2vw,22px)!important;font-weight:500!important;color:#52627d!important}
+body:has(#nx-v33-flow){overflow:hidden!important}
+@media(max-width:760px){#nx-v33-flow.nx-v33-overlay{place-items:start center!important;padding:22px 16px!important}#nx-v33-flow .nx-v33-levels{grid-template-columns:1fr!important}#nx-v33-flow .nx-v33-level{min-height:unset!important;padding:20px!important}#nx-v33-flow .nx-v33-brand{margin-bottom:20px!important}}
+
+/* V41 — flujo de personalización asistida por IA, adaptable a cualquier pantalla */
+#nx-v33-flow .nx-ai-wrap{max-width:850px!important;width:min(850px,100%)!important;padding-bottom:22px}
+#nx-v33-flow .nx-ai-progress{height:6px;background:#dfe5f5;border-radius:99px;overflow:hidden;margin:26px 0 18px}
+#nx-v33-flow .nx-ai-progress span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#6957e8,#16b8cf);transition:width .25s}
+#nx-v33-flow .nx-ai-count{font-size:12px;letter-spacing:.13em;font-weight:800;color:#6557df;margin-bottom:10px}
+#nx-v33-flow .nx-ai-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}
+#nx-v33-flow .nx-ai-option{min-height:58px;border:1px solid #d9e1f0;border-radius:14px;background:rgba(255,255,255,.88);color:#17213a;text-align:left;padding:15px 17px;font:inherit;font-weight:650;cursor:pointer;transition:.2s}
+#nx-v33-flow .nx-ai-option:hover,#nx-v33-flow .nx-ai-option.selected{border-color:#7565f4;background:#f1efff;box-shadow:0 0 0 3px #7565f41c}
+#nx-v33-flow .nx-ai-textarea{display:block;box-sizing:border-box;width:100%;min-height:105px;margin:24px 0;padding:16px;border:1px solid #d9e1f0;border-radius:14px;background:#fff;color:#17213a;font:inherit;resize:vertical}
+#nx-v33-flow .nx-ai-actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+#nx-v33-flow .nx-ai-back,#nx-v33-flow .nx-ai-next{border:0;border-radius:12px;padding:13px 20px;font:inherit;font-weight:750;cursor:pointer}
+#nx-v33-flow .nx-ai-back{background:#fff;color:#46536d;border:1px solid #d9e1f0}
+#nx-v33-flow .nx-ai-back:disabled{opacity:.4;cursor:default}
+#nx-v33-flow .nx-ai-next{background:linear-gradient(110deg,#6557e8,#3988f6);color:#fff;box-shadow:0 8px 22px #6557e833}
+#nx-v33-flow .nx-ai-footnote{color:#6b7890;font-size:12px;margin-top:18px}
+#nx-v33-flow .nx-v33-brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#nx-v33-flow .nx-v33-brand .nx-v33-cancel{margin-left:auto}
+@media(max-width:650px){#nx-v33-flow .nx-ai-options{grid-template-columns:1fr}#nx-v33-flow .nx-ai-wrap{padding-bottom:16px}#nx-v33-flow .nx-ai-option{min-height:50px}#nx-v33-flow .nx-ai-actions button{padding:12px 14px}}
+
+/* Logo oficial CIA aplicado al asistente y a la bienvenida */
+.nx-v33-mark{font-size:0!important;color:transparent!important;border-radius:0!important;background:transparent url('../icons/cia-logo.png') center/contain no-repeat!important;box-shadow:none!important}
+.nx-v33-mark::before{border-radius:0!important;border-color:rgba(181,31,53,.24)!important}
+.nx-v33-brand .nx-v33-mark.small{width:42px;height:42px;flex:0 0 42px}
+
+/* CIA plan Max: tarjeta destacada y siempre legible en el selector de planes */
+.nx-plan-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+.nx-plan-card{min-height:100%;box-sizing:border-box}
+.nx-plan-card.nx-plan-max{border:2px solid #c6a253;background:linear-gradient(160deg,#fffdf7 0%,#fff 62%,#f8f1df 100%);box-shadow:0 10px 28px rgba(137,103,32,.13)}
+.nx-plan-card.nx-plan-max .nx-plan-tag{color:#8b671c;background:#f5e8bd;border-radius:999px;padding:6px 9px;align-self:flex-start}
+.nx-plan-card.nx-plan-max h2{color:#161616}
+.nx-plan-card.nx-plan-max .nx-plan-select{background:#171717;color:#f0d58a}
+.nx-plan-card.nx-plan-max.on{border-color:#a47a20;box-shadow:0 0 0 3px rgba(198,162,83,.22),0 12px 30px rgba(137,103,32,.17)}
+@media(max-width:900px){.nx-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.nx-plan-grid{grid-template-columns:1fr}}
